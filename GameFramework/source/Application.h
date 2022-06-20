@@ -23,6 +23,7 @@ private:
 	bool fpsLimitEnabled;
 	unsigned maxFPS;
 
+public:
 	std::vector<GameObject*> allEntities;
 
 public:

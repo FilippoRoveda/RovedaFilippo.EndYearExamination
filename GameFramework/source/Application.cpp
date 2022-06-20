@@ -4,6 +4,7 @@
 #include "Components/RectTransform.h"
 #include "Classes/Sprite.h";
 #include "Classes/Character.h"
+#include "Classes/Agent.h"
 
 
 #include "iostream"
@@ -147,6 +148,11 @@ void Application::Initialize()
 	dux->rectTransform->SetScale(185, 273);
 	dux->movementComponent->speed = 200;
 	allEntities.push_back(dux);
+
+	auto runningDux = new Agent(this);
+	runningDux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
+	runningDux->rectTransform->SetScale(185, 273);
+	allEntities.push_back(runningDux);
 }
 
 void Application::Run()
