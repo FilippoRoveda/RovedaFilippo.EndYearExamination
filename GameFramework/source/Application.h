@@ -116,4 +116,7 @@ private:
 	void Initialize();
 
 
+	void CheckCollision();
+
+
 };

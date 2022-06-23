@@ -2,7 +2,7 @@
 
 MovementComponent::MovementComponent() : Component ("Movement Component")
 {
-	speed = 10;
+	speed = 40;
 }
 
 MovementComponent::~MovementComponent()

@@ -12,7 +12,17 @@ void Controller::On_Update(const float delta_time)
 		forwardMovement = true;
 		YAxis = -1;
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	{
+		forwardMovement = true;
+		YAxis = -1;
+	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		forwardMovement = true;
+		YAxis = 1;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		forwardMovement = true;
 		YAxis = 1;
@@ -28,7 +38,17 @@ void Controller::On_Update(const float delta_time)
 		rightwardMovement = true;
 		XAxis = 1;
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	{
+		rightwardMovement = true;
+		XAxis = 1;
+	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		rightwardMovement = true;
+		XAxis = -1;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 		rightwardMovement = true;
 		XAxis = -1;

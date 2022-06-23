@@ -42,7 +42,7 @@ public:
 	 /// </summary>
 	/// <typeparam name="T">the component to add</typeparam>
 	/// <returns></returns>
-	 template<class T, class = Component>  T* Get_Component() const {
+	 template<class T, class = Component>  T* Get_Component() {
 
 		 if (components.size() == 0) return nullptr;
 
@@ -62,7 +62,7 @@ public:
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <returns></returns>
-	 template<class T> std::vector<T*> Get_Components() const
+	 template<class T> std::vector<T*> Get_Components() 
 	 {
 		 std::vector<T*> result;
 

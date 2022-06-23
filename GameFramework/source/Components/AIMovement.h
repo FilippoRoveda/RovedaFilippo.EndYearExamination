@@ -22,8 +22,8 @@ private:
 	bool hasTarget = false;
 
 protected:
-	float maxSpeed = 200;
-	float radius = 100;
+	float maxSpeed = 100;
+	float radius = 200;
 	sf::Vector2f position;
 	float orientation;
 	sf::Vector2f velocity = {0, 0};

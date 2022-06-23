@@ -5,6 +5,7 @@
 #include "Classes/Sprite.h";
 #include "Classes/Character.h"
 #include "Classes/Agent.h"
+#include "Components/Collider.h"
 
 
 #include "iostream"
@@ -143,15 +144,30 @@ void Application::Initialize()
 	background->rectTransform->SetScale(1920, 1080);
 	allEntities.push_back(background);
 
+	auto wall = new Sprite();
+	wall->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
+	auto collider = new Collider(wall->rectTransform, 1.0f);
+	wall->Add_Component(collider);
+	wall->rectTransform->SetScale(1, 1);
+	wall->rectTransform->SetPosition(700, 700);
+	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{185,300});
+	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185/2, 300/2 });
+	allEntities.push_back(wall);
+
 	auto dux = new Character();
+	auto colliderDux = new Collider(dux->rectTransform, 1.0f);
+	dux->Add_Component(colliderDux);
 	dux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
-	dux->rectTransform->SetScale(185, 273);
+	dux->rectTransform->SetScale(1, 1);
+	dux->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
+	dux->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
 	dux->movementComponent->speed = 200;
 	allEntities.push_back(dux);
 
 	auto runningDux = new Agent(this);
-	runningDux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
-	runningDux->rectTransform->SetScale(185, 273);
+	runningDux->renderer->SetTexturePath("source/resources/hitler.jpg", true, true);
+	runningDux->rectTransform->SetScale(256, 256);
+	runningDux->rectTransform->SetPosition(500, 500);
 	allEntities.push_back(runningDux);
 }
 
@@ -174,12 +190,39 @@ void Application::Run()
 			}
 		}
 		Update();
+		CheckCollision();
 		Draw();
 		if (fpsLimitEnabled)
 		{
 			sf::sleep(sf::seconds((1.0f / maxFPS)));
 		}
 	}
+}
+
+void Application::CheckCollision() {
+	std::vector<Collider*> colliders;
+	int i = 0;
+	for (auto item : allEntities)
+	{
+		if(item->Get_Component<Collider>()!=nullptr)
+		{
+			colliders.push_back(dynamic_cast<Collider*>(item->Get_Component<Collider>()));
+			i++;
+		}
+	}
+	std::cout << i << std::endl;
+		colliders[0]->CheckCollision(colliders[1], 1.0f);
+		colliders[1]->CheckCollision(colliders[0], 0.0f);
+		/*for (auto coll1 : colliders)
+		{
+			for (auto coll2 : colliders)
+			{
+				if (coll1 != coll2) {
+					coll1->CheckCollision(coll2, coll2->push);
+				}
+			}
+		}*/
+	//}
 }
 
 
