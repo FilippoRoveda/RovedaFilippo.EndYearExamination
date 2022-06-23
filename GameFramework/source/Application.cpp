@@ -2,10 +2,12 @@
 #include "Components/Component.h"
 #include "Classes/IDrawable.h"
 #include "Components/RectTransform.h"
-#include "Classes/Sprite.h";
+#include "Classes/Sprite.h"
 #include "Classes/Character.h"
 #include "Classes/Agent.h"
 #include "Components/Collider.h"
+#include "Components/MusicComponent.h"
+#include "Classes/MusicObject.h"
 
 
 #include "iostream"
@@ -16,13 +18,9 @@
 Application::Application()
 {
 	_Window = nullptr;
-
 	fpsLimitEnabled = false;
 	maxFPS = 0;
-
 	backgroundcolor = sf::Color::Black;
-
-	//initialize();
 }
 
 Application::~Application()
@@ -142,6 +140,8 @@ void Application::Initialize()
 	auto background = new Sprite();
 	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
 	background->rectTransform->SetScale(1920, 1080);
+	auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
+	background->Add_Component(soundTrack);
 	allEntities.push_back(background);
 
 	auto wall = new Sprite();
@@ -174,6 +174,7 @@ void Application::Initialize()
 void Application::Run()
 {
 	Initialize();
+	PlayMusicsInScene();
 	lastTime = tm.getCurrentTime();
 	while (_Window->isOpen())
 	{
@@ -200,29 +201,56 @@ void Application::Run()
 }
 
 void Application::CheckCollision() {
+
 	std::vector<Collider*> colliders;
-	int i = 0;
+
 	for (auto item : allEntities)
 	{
 		if(item->Get_Component<Collider>()!=nullptr)
 		{
 			colliders.push_back(dynamic_cast<Collider*>(item->Get_Component<Collider>()));
-			i++;
 		}
 	}
-	std::cout << i << std::endl;
-		colliders[0]->CheckCollision(colliders[1], 1.0f);
-		colliders[1]->CheckCollision(colliders[0], 0.0f);
-		/*for (auto coll1 : colliders)
+	for (auto coll1 : colliders)
+	{
+		for (auto coll2 : colliders)
 		{
-			for (auto coll2 : colliders)
-			{
-				if (coll1 != coll2) {
-					coll1->CheckCollision(coll2, coll2->push);
-				}
+			if (coll1 != coll2) {
+				coll1->CheckCollision(coll2, coll2->push);
 			}
-		}*/
-	//}
+
+		}
+	}
+}
+
+void Application::PlayMusicsInScene()
+{
+	std::vector<MusicComponent*> musics;
+
+	for (auto item : allEntities)
+	{
+		if (item->Get_Component<MusicComponent>() != nullptr)
+		{
+			musics.push_back(dynamic_cast<MusicComponent*>(item->Get_Component<MusicComponent>()));
+		}
+	}
+	for (auto item : musics)
+	{
+		if (item->playOnStart == true)
+		{
+			item->Play();
+		}
+	}
+
+	for (auto item : allEntities)
+	{
+		const auto val = dynamic_cast<MusicObject*>(item);
+		if (!val) continue;
+		else if (val->playOnStart == true)
+		{
+			val->Play();
+		}
+	}
 }
 
 

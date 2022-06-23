@@ -118,5 +118,5 @@ private:
 
 	void CheckCollision();
 
-
+	void PlayMusicsInScene();
 };
