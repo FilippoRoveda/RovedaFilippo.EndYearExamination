@@ -1,7 +1,7 @@
 #include "SFML/Graphics.hpp"
 #include "..\RectTransform.h"
 #include <..\source\Classes\Character.h>
-#include "..\DataStruct.h"
+#include "..\source\DataStruct.h"
 
 class SeekSteeringAlgorithm {
 public:

@@ -137,5 +137,8 @@
     <ClInclude Include="source\Classes\MusicObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\DataStruct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
