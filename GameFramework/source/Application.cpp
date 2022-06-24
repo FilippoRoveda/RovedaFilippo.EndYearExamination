@@ -81,7 +81,7 @@ void Application::SetBackgroundColor(float red, float green, float blue, float a
 /// <returns></returns>
 void Application::AddCameraInScene(CameraComponent* camera)
 {
-	cameraInScene.push_back(camera);
+	allCameraInScene.push_back(camera);
 }
 
 
@@ -97,7 +97,7 @@ void Application::SetSceneCamera()
 	CameraComponent* cam;
 	while (completed == true)
 	{
-		for (auto item : cameraInScene)
+		for (auto item : allCameraInScene)
 		{
 			if (item->priority <= counter)
 			{
@@ -139,6 +139,18 @@ void Application::ProcessWindowEvents()
 		{
 			_Window->close();
 		}
+		if (evt.type == sf::Event::EventType::Resized)
+		{
+			ResizeView();
+		}
+	}
+}
+
+void Application::ResizeView()
+{
+	float aspectRatio = float(_Window->getSize().x) / float(_Window->getSize().y);
+	if (currentCamera != nullptr) {
+		currentCamera->cameraView->setSize(currentCamera->cameraView->getSize().x / aspectRatio, currentCamera->cameraView->getSize().y / aspectRatio);
 	}
 }
 

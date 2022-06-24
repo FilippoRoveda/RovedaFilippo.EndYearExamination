@@ -24,6 +24,7 @@ CameraComponent::~CameraComponent()
 void CameraComponent::SetView()
 {
 	sf::View& cam = *(cameraView);
+	context->currentCamera = this;
 	context->_Window->setView(cam);
 }
 

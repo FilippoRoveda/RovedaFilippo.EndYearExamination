@@ -28,7 +28,8 @@ protected:
 	sf::RenderWindow* _Window;
 public:
 	std::vector<GameObject*> allEntities;
-	std::vector<CameraComponent*> cameraInScene;
+	std::vector<CameraComponent*> allCameraInScene;
+	CameraComponent* currentCamera;
 
 public:
 	Application();
@@ -158,9 +159,10 @@ private:
 
 	void ProcessWindowEvents();
 
-	//void processInput();
+	void ResizeView();
 
 	void FixedUpdate();
+
 	void Update();
 
 	void Draw();
