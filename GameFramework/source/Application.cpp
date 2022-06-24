@@ -145,41 +145,63 @@ void Application::Initialize()
 	allEntities.push_back(background);
 
 	auto wall = new Sprite();
-	wall->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
+	wall->renderer->SetTexturePath("", true, true);
 	auto collider = new Collider(wall->rectTransform, 1.0f);
+	collider->isMovable = false;
 	wall->Add_Component(collider);
 	wall->rectTransform->SetScale(1, 1);
-	wall->rectTransform->SetPosition(700, 700);
-	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{185,300});
-	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185/2, 300/2 });
+	wall->rectTransform->SetPosition(1000, 1000);
+	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{1500,300});
+	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 750, 300/2 });
 	allEntities.push_back(wall);
 
+	auto wa = new Sprite();
+	wa->renderer->SetTexturePath("", true, true);
+	auto c = new Collider(wa->rectTransform, 0.0f);
+	wa->Add_Component(c);
+	wa->rectTransform->SetScale(1, 1);
+	wa->rectTransform->SetPosition(500, 800);
+	wa->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
+	wa->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
+	allEntities.push_back(wa);
+
+	auto w = new Sprite();
+	w->renderer->SetTexturePath("", true, true);
+	auto i = new Collider(w->rectTransform, 0.0f);
+	w->Add_Component(i);
+	w->rectTransform->SetScale(1, 1);
+	w->rectTransform->SetPosition(1500, 200);
+	w->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
+	w->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
+	allEntities.push_back(w);
+
 	auto dux = new Character();
-	auto colliderDux = new Collider(dux->rectTransform, 1.0f);
-	dux->Add_Component(colliderDux);
 	dux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
 	dux->rectTransform->SetScale(1, 1);
 	dux->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
 	dux->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
 	dux->movementComponent->speed = 200;
+	dux->rectTransform->SetPosition(800, 500);
 	allEntities.push_back(dux);
 
-	auto runningDux = new Agent(this);
-	runningDux->renderer->SetTexturePath("source/resources/hitler.jpg", true, true);
-	runningDux->rectTransform->SetScale(256, 256);
-	runningDux->rectTransform->SetPosition(500, 500);
-	allEntities.push_back(runningDux);
+	/*auto seeker = new Agent(this);
+	Collider* coll = new Collider(seeker->rectTransform, 1.0f);
+	seeker->Add_Component(coll);
+	seeker->renderer->SetTexturePath("source/resources/hitler.jpg", true, true);
+	seeker->rectTransform->SetScale(256, 256);
+	seeker->rectTransform->SetPosition(500, 0);
+	allEntities.push_back(seeker);*/
 }
 
 void Application::Run()
 {
 	Initialize();
-	PlayMusicsInScene();
+	//PlayMusicsInScene();
 	lastTime = tm.getCurrentTime();
 	while (_Window->isOpen())
 	{
 		UpdateGameTime();
-		std::cout << "FPS: " << GetFrameRate() << std::endl;
+		//std::cout << "FPS: " << GetFrameRate() << std::endl;
 
 		ProcessWindowEvents();
 		if (fixedUpdateEnabled)

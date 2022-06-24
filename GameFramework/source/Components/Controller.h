@@ -1,11 +1,12 @@
 #pragma once
 #include "..\Components\Component.h"
+//#include "Components/MovementComponent.h"
 #include "..\include\SFML\Graphics.hpp"
 
 /**
 *  /brief Component that manage device inputs
 */
-
+class MovementComponent;
 class Controller : public Component
 {
 	friend class Application;
@@ -16,6 +17,9 @@ private:
 	bool rightwardMovement;
 	float XAxis, YAxis;
 
+	MovementComponent* movementComponent;
+
+
 
 
 protected:
@@ -24,13 +28,18 @@ protected:
 
 public:
 	Controller();
+	Controller(MovementComponent* movementComponent );
 	~Controller() override;
+
+	void SetMovementComponent(MovementComponent* movementComponent) {
+		this->movementComponent = movementComponent;
+	}
 
 	/**
  * \brief get all axis component as 2D vector
  * \return axis vector
  */
-	[[nodiscard]] sf::Vector2f Get_Axis_Vector()const { return { XAxis, YAxis }; }
+	[[nodiscard]] sf::Vector2f Get_Axis_Vector() { return { XAxis, YAxis }; }
 };
 
 	

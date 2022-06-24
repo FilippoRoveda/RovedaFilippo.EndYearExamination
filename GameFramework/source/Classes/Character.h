@@ -17,4 +17,5 @@ public:
 public:
 	Controller* controller;
 	MovementComponent* movementComponent;
+	Collider* collider;
 };

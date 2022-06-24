@@ -3,12 +3,17 @@
 Character::Character() : Sprite()
 {
 	controller = new Controller();
-	Add_Component(controller);
-
 	movementComponent = new MovementComponent();
+	controller->SetMovementComponent(movementComponent);
 	movementComponent->inputController = controller;
 	movementComponent->transform = rectTransform;
 	movementComponent->speed = 100;
+	movementComponent->SetOwner(this);
+	collider = new Collider(rectTransform, 1.0f);
+	movementComponent->SetCollider(collider);
+
+	Add_Component(collider);
+	Add_Component(controller);
 	Add_Component(movementComponent);
 }
 
@@ -16,6 +21,7 @@ Character::~Character()
 {
 	delete movementComponent;
 	delete controller;
+	delete collider;
 }
 
 

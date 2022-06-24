@@ -9,7 +9,7 @@ class Component : public Object, public ITickable
 {
 	friend class GameObject;
 
-private:
+protected:
 	GameObject* owner = nullptr;
 
 protected:
@@ -22,5 +22,7 @@ public:
 	virtual ~Component() = default;
 
 	[[nodiscard]] GameObject* Get_Owner() const { return owner; }
+
+	void SetOwner(GameObject* owner) { this->owner = owner; }
 
 };

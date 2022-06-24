@@ -1,3 +1,4 @@
+#pragma once
 #include "Component.h"
 #include "RectTransform.h"
 
@@ -7,6 +8,9 @@ private:
 	RectTranform* body;
 public:
 	float push;
+	sf::Vector2f* collisionDirection;
+
+	bool isMovable = true;
 
 public:
 	Collider(RectTranform* body, float push);
@@ -18,5 +22,7 @@ public:
 
 	//Forse devo modificare la velocità dell'altro
 	void Move(float x, float y) { body->GetTransform()->move(x, y); }
+
+	sf::Vector2f* GetCollisionDirection() { return collisionDirection; }
 
 };

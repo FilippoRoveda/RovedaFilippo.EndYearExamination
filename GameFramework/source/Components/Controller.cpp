@@ -1,32 +1,38 @@
-
 #include "..\Components\Component.h"
 #include "..\Components\Controller.h"
+#include "Components/MovementComponent.h"
 
 
 void Controller::On_Update(const float delta_time)
 {
 	Component::On_Update(delta_time);
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		movementComponent->Jump();
+	}
+
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		forwardMovement = true;
-		YAxis = -1;
+		//forwardMovement = true;
+		//YAxis = -1;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
-		forwardMovement = true;
-		YAxis = -1;
+		//forwardMovement = true;
+		//YAxis = -1;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-	{
-		forwardMovement = true;
-		YAxis = 1;
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		forwardMovement = true;
-		YAxis = 1;
-	}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+		{
+			forwardMovement = true;
+			YAxis = 1;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			forwardMovement = true;
+			YAxis = 1;
+		}
 	else
 	{
 		forwardMovement = false;
@@ -43,23 +49,23 @@ void Controller::On_Update(const float delta_time)
 		rightwardMovement = true;
 		XAxis = 1;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		rightwardMovement = true;
-		XAxis = -1;
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		rightwardMovement = true;
-		XAxis = -1;
-	}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+		{
+			rightwardMovement = true;
+			XAxis = -1;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			rightwardMovement = true;
+			XAxis = -1;
+		}
 	else
 	{
 		forwardMovement = false;
 		XAxis = 0;
 	}
 
-	printf("axis: %f, %f \n", XAxis, YAxis);
+	//printf("axis: %f, %f \n", XAxis, YAxis);
 }
 
 void Controller::On_Fixed_Update(const float delta_time)
@@ -68,8 +74,17 @@ void Controller::On_Fixed_Update(const float delta_time)
 
 }
 
-Controller::Controller() : Component ("Controller")
+Controller::Controller() : Component("Controller")
 {
+	forwardMovement = false;
+	rightwardMovement = true;
+	XAxis = 0;
+	YAxis = 0;
+}
+
+Controller::Controller(MovementComponent* movementComponent ) : Component ("Controller")
+{
+	this->movementComponent = movementComponent;
 	forwardMovement = false;
 	rightwardMovement = true;
 	XAxis = 0;
