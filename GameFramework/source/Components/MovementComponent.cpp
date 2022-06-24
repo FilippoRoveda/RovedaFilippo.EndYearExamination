@@ -40,7 +40,7 @@ void MovementComponent::On_Update(const float delta_time)
 	if (isJumping)
 	{
 		if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
-		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 300 * delta_time, 
+		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
 							  GetMotionVector().y * speed * delta_time - jumpForce * delta_time);
 	}
 

@@ -150,12 +150,12 @@ void Application::Initialize()
 	collider->isMovable = false;
 	wall->Add_Component(collider);
 	wall->rectTransform->SetScale(1, 1);
-	wall->rectTransform->SetPosition(1000, 1000);
-	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{1500,300});
-	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 750, 300/2 });
+	wall->rectTransform->SetPosition(1000, 800);
+	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{10000000000,2});
+	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 10000000000/2, 1 });
 	allEntities.push_back(wall);
 
-	auto wa = new Sprite();
+	/*auto wa = new Sprite();
 	wa->renderer->SetTexturePath("", true, true);
 	auto c = new Collider(wa->rectTransform, 0.0f);
 	wa->Add_Component(c);
@@ -173,7 +173,7 @@ void Application::Initialize()
 	w->rectTransform->SetPosition(1500, 200);
 	w->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
 	w->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(w);
+	allEntities.push_back(w);*/
 
 	auto dux = new Character();
 	dux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
@@ -181,7 +181,7 @@ void Application::Initialize()
 	dux->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
 	dux->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
 	dux->movementComponent->speed = 200;
-	dux->rectTransform->SetPosition(800, 500);
+	dux->rectTransform->SetPosition(800, 400);
 	allEntities.push_back(dux);
 
 	/*auto seeker = new Agent(this);
