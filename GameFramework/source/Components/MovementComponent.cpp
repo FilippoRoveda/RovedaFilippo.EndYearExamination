@@ -35,8 +35,11 @@ void MovementComponent::On_Update(const float delta_time)
 	if (!IsMotionValid()) return;
 
 	auto nextPos = sf::Vector2f{ 0,0 };
+	if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
+	else if(GetMotionVector().x == 1) { transform->GetTransform()->setScale(1, 1); }
 	if (isJumping)
 	{
+		if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
 		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 300 * delta_time, 
 							  GetMotionVector().y * speed * delta_time - jumpForce * delta_time);
 	}

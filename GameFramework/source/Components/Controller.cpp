@@ -12,8 +12,7 @@ void Controller::On_Update(const float delta_time)
 		movementComponent->Jump();
 	}
 
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 		//forwardMovement = true;
 		//YAxis = -1;
@@ -22,17 +21,17 @@ void Controller::On_Update(const float delta_time)
 	{
 		//forwardMovement = true;
 		//YAxis = -1;
+	}*/
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		forwardMovement = true;
+		YAxis = 1;
 	}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		{
-			forwardMovement = true;
-			YAxis = 1;
-		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		{
-			forwardMovement = true;
-			YAxis = 1;
-		}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	{
+		forwardMovement = true;
+		YAxis = 1;
+	}
 	else
 	{
 		forwardMovement = false;
@@ -44,11 +43,11 @@ void Controller::On_Update(const float delta_time)
 		rightwardMovement = true;
 		XAxis = 1;
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		rightwardMovement = true;
-		XAxis = 1;
-	}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			rightwardMovement = true;
+			XAxis = 1;
+		}
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		{
 			rightwardMovement = true;
@@ -64,7 +63,6 @@ void Controller::On_Update(const float delta_time)
 		forwardMovement = false;
 		XAxis = 0;
 	}
-
 	//printf("axis: %f, %f \n", XAxis, YAxis);
 }
 
