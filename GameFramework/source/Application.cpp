@@ -72,6 +72,47 @@ void Application::SetBackgroundColor(float red, float green, float blue, float a
 	backgroundcolor = sf::Color(red, green, blue, alpha);
 }
 
+
+
+
+/// <summary>
+/// Add a CameraComponent to cameraInScene array that stores all view camera actually in scene.
+/// </summary>
+/// <returns></returns>
+void Application::AddCameraInScene(CameraComponent* camera)
+{
+	cameraInScene.push_back(camera);
+}
+
+
+/// <summary>
+/// Set the current View of the _Window member of apllication based on priority.
+/// priority is a member of CameraComponent class.
+/// </summary>
+/// <returns></returns>
+void Application::SetSceneCamera()
+{
+	int counter = 0;
+	bool completed = false;
+	CameraComponent* cam;
+	while (completed == true)
+	{
+		for (auto item : cameraInScene)
+		{
+			if (item->priority <= counter)
+			{
+				item->SetView();
+				completed = true;
+				return;
+			}
+		}
+		counter++;
+		if (counter > 10) { return; }
+	}
+}
+
+
+
 ////
 ////	GameLoop functions
 ////
@@ -144,16 +185,16 @@ void Application::Initialize()
 	background->Add_Component(soundTrack);
 	allEntities.push_back(background);
 
-	auto wall = new Sprite();
-	wall->renderer->SetTexturePath("", true, true);
-	auto collider = new Collider(wall->rectTransform, 1.0f);
+	auto groundLayer = new Sprite();
+	groundLayer->renderer->SetTexturePath("", true, true);
+	auto collider = new Collider(groundLayer->rectTransform, 1.0f);
 	collider->isMovable = false;
-	wall->Add_Component(collider);
-	wall->rectTransform->SetScale(1, 1);
-	wall->rectTransform->SetPosition(1000, 800);
-	wall->rectTransform->GetTransform()->setSize(sf::Vector2f{10000000000,2});
-	wall->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 10000000000/2, 1 });
-	allEntities.push_back(wall);
+	groundLayer->Add_Component(collider);
+	groundLayer->rectTransform->SetScale(1, 1);
+	groundLayer->rectTransform->SetPosition(1000, 800);
+	groundLayer->rectTransform->GetTransform()->setSize(sf::Vector2f{10000000000,2});
+	groundLayer->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 10000000000/2, 1 });
+	allEntities.push_back(groundLayer);
 
 	/*auto wa = new Sprite();
 	wa->renderer->SetTexturePath("", true, true);
@@ -175,14 +216,17 @@ void Application::Initialize()
 	w->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
 	allEntities.push_back(w);*/
 
-	auto dux = new Character();
-	dux->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
-	dux->rectTransform->SetScale(1, 1);
-	dux->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
-	dux->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
-	dux->movementComponent->speed = 200;
-	dux->rectTransform->SetPosition(800, 400);
-	allEntities.push_back(dux);
+	auto mainPG = new Character();
+	mainPG->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
+	mainPG->rectTransform->SetScale(1, 1);
+	mainPG->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
+	mainPG->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
+	mainPG->movementComponent->speed = 200;
+	mainPG->rectTransform->SetPosition(800, 400);
+	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, mainPG);
+	mainPG->Add_Component(mainCamera);
+
+	allEntities.push_back(mainPG);
 
 	/*auto seeker = new Agent(this);
 	Collider* coll = new Collider(seeker->rectTransform, 1.0f);
@@ -196,7 +240,8 @@ void Application::Initialize()
 void Application::Run()
 {
 	Initialize();
-	//PlayMusicsInScene();
+	PlayMusicsInScene();
+	SetSceneCamera();
 	lastTime = tm.getCurrentTime();
 	while (_Window->isOpen())
 	{

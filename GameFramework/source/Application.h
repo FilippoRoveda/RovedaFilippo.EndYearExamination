@@ -2,14 +2,15 @@
 #include "SFML/Graphics.hpp"
 #include "TimeManager.h"
 #include"Classes/GameObject.h"
+#include"Components/CameraComponent.h"
 
 
 
 class Application
 {
+	friend class CameraComponent;
 
 private:
-	sf::RenderWindow* _Window;
 	sf::Color backgroundcolor;
 	TimeManager tm;
 
@@ -23,8 +24,11 @@ private:
 	bool fpsLimitEnabled;
 	unsigned maxFPS;
 
+protected:
+	sf::RenderWindow* _Window;
 public:
 	std::vector<GameObject*> allEntities;
+	std::vector<CameraComponent*> cameraInScene;
 
 public:
 	Application();
@@ -93,6 +97,54 @@ public:
 	/// </summary>
 	void Run();
 
+	/// <summary>
+	/// Add a GameObject to allEntities vector in application.
+	/// </summary>
+	void AddEntity(GameObject* entity)
+	{
+		allEntities.push_back(entity);
+	}
+
+	/// <summary>
+	/// Remove specific GameObject to allEntities vector in application.
+	/// </summary>
+	void RemoveEntity(GameObject* entity)
+	{
+		for (auto item : allEntities)
+		{
+			if (item == entity)
+			{
+				std::vector<GameObject*> buffer;
+				for (auto item : allEntities)
+				{
+					if (item != entity)
+					{
+						buffer.push_back(item);
+					}
+				}
+				allEntities = buffer;
+				delete entity;
+			}
+		}
+	}
+
+
+
+
+
+	public:
+		void AddCameraInScene(CameraComponent* camera);
+
+
+	private:
+		void SetSceneCamera();
+
+
+
+
+
+
+
 //GameLoop functions
 private:
 
@@ -119,4 +171,8 @@ private:
 	void CheckCollision();
 
 	void PlayMusicsInScene();
+
+
+
+
 };

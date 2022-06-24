@@ -50,4 +50,6 @@ public:
  * \return Area transform.
  */
 	[[nodiscard]] sf::RectangleShape* GetTransform()const;
+
+	sf::Vector2f GetPosition() { return position; }
 };
