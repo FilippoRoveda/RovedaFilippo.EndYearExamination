@@ -37,13 +37,25 @@ void MovementComponent::On_Update(const float delta_time)
 
 	if (GetMotionVector().x == -1) 
 	{
-		transform->GetTransform()->setScale(-1, 1); 
-		//transform->GetTransform()->setTextureRect();
+
+		if (orientation != -1)
+		{
+			//transform->GetTransform()->setScale(-1, 1);
+			orientation = -1;
+			rederer->SetTexturePath("source/resources/BackIdle.png", true, true);
+			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+		}
+
 	}
 	else if(GetMotionVector().x == 1) 
 	{
-
-		transform->GetTransform()->setScale(1, 1); 
+		//transform->GetTransform()->setScale(1, 1);
+		if (orientation != 1)
+		{
+			orientation = 1;
+			rederer->SetTexturePath("source/resources/idle.png", true, true);
+			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+		}
 	}
 
 

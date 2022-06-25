@@ -4,6 +4,7 @@
 #include "..\Components\RectTransform.h"
 #include "..\Components\Controller.h"
 #include "..\Components\Collider.h"
+#include "..\Components\Renderer2D.h"
 
 /**
  * \brief Component to move object with a RectTransform component inside the world scene
@@ -20,8 +21,11 @@ public:
 	Controller* inputController = nullptr;
 	RectTranform* transform = nullptr;
 	Collider* collider = nullptr;
+	Renderer2D* rederer = nullptr;
+
 
 protected:
+	int orientation = 1;
 	sf::Vector2f direction = {0,0};
 	sf::Vector2f velocity = {0,0};
 
@@ -31,6 +35,8 @@ public:
 
 	void SetCollider(Collider* collider) { this->collider = collider; }
 	void RemoveCollider() { collider = nullptr; }
+	void SetRenderer(Renderer2D* rederer) { this->rederer = rederer; }
+	void RemoveRenderer() { rederer = nullptr; }
 
 	[[nodiscard]] sf::Vector2f GetVelocity();
 	void SetVelocity(float speed) { this->speed = speed; }

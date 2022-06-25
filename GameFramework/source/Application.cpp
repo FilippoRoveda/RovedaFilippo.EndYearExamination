@@ -191,12 +191,15 @@ void Application::Draw()
 
 void Application::Initialize()
 {
-	auto background = new Sprite();
-	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
-	background->rectTransform->SetScale(1920, 1080);
-	auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
-	background->Add_Component(soundTrack);
-	allEntities.push_back(background);
+
+		auto background = new Sprite();
+		background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
+		background->rectTransform->SetScale(1920, 1080);
+		auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
+		background->rectTransform->SetPosition(0,50);
+		background->Add_Component(soundTrack);
+		allEntities.push_back(background);
+	
 
 	auto groundLayer = new Sprite();
 	groundLayer->renderer->SetTexturePath("", true, true);
@@ -228,6 +231,7 @@ void Application::Initialize()
 	Pg->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 400 / 2, 400 / 2 });
 	Pg->movementComponent->speed = 200;
 	Pg->rectTransform->SetPosition(800, 400);
+	Pg->movementComponent->SetRenderer(Pg->renderer);
 	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, Pg);
 	Pg->Add_Component(mainCamera);
 	auto anim = new AnimationComponent(Pg->rectTransform, sf::Vector2u(3,1), 0.6f);
