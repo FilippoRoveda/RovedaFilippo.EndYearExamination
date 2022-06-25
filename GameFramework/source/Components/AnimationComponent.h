@@ -21,4 +21,5 @@ private:
 	float switchTime;
 
 	RectTranform* animated;
+	const sf::Texture* currentTexture;
 };

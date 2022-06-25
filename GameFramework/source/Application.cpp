@@ -192,13 +192,13 @@ void Application::Draw()
 void Application::Initialize()
 {
 
-		auto background = new Sprite();
-		background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
-		background->rectTransform->SetScale(1920, 1080);
-		auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
-		background->rectTransform->SetPosition(0,50);
-		background->Add_Component(soundTrack);
-		allEntities.push_back(background);
+	auto background = new Sprite();
+	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
+	background->rectTransform->SetScale(1920, 1080);
+	auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
+	background->rectTransform->SetPosition(0,50);
+	background->Add_Component(soundTrack);
+	allEntities.push_back(background);
 	
 
 	auto groundLayer = new Sprite();

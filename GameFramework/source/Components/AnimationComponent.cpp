@@ -3,6 +3,7 @@
 AnimationComponent::AnimationComponent(RectTranform* texture, sf::Vector2u imgCount, float switchTime) : Component("Animation component")
 {
 	animated = texture;
+	currentTexture = animated->GetTransform()->getTexture();
 	this->imgCount = imgCount;
 	this->switchTime = switchTime;
 	totalTime = 0.0f;
@@ -17,6 +18,12 @@ AnimationComponent::~AnimationComponent()
 
 void AnimationComponent::On_Update(const float delta_time)
 {
+	if (animated->GetTransform()->getTexture() != currentTexture)
+	{
+		currentTexture = animated->GetTransform()->getTexture();
+		imgCount = { currentTexture->getSize().x / 300, currentTexture->getSize().y / 300 };
+	}
+
 	currentImg.y = 1;
 	totalTime += delta_time;
 
@@ -32,5 +39,7 @@ void AnimationComponent::On_Update(const float delta_time)
 		uvRect.left = currentImg.x; //* uvRect.width;
 		//uvRect.top = currentImg.y; //* uvRect.height;
 		animated->GetTransform()->setTextureRect(sf::IntRect(uvRect.left*uvRect.width, 1, 300,300));
+
+		
 	}
 }

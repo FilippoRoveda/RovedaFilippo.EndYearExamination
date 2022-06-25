@@ -15,6 +15,7 @@ class MovementComponent : public Component
 public:
 	float speed;
 	bool isJumping = false;
+	bool wasJumping = false;
 	float maxJumpForce = 1300;
 	float currentJumpForce;
 

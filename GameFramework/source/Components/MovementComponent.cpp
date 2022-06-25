@@ -35,23 +35,23 @@ void MovementComponent::On_Update(const float delta_time)
 	if (!IsMotionValid()) return;
 	auto nextPos = sf::Vector2f{ 0,0 };
 
-	if (GetMotionVector().x == -1) 
+	if ((GetMotionVector().x == -1 && isJumping == false))
 	{
 
-		if (orientation != -1)
+		if ((orientation != -1 || wasJumping==true))
 		{
-			//transform->GetTransform()->setScale(-1, 1);
+			wasJumping = false;
 			orientation = -1;
 			rederer->SetTexturePath("source/resources/BackIdle.png", true, true);
 			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
 		}
 
 	}
-	else if(GetMotionVector().x == 1) 
+	else if(GetMotionVector().x == 1 && isJumping == false)
 	{
-		//transform->GetTransform()->setScale(1, 1);
-		if (orientation != 1)
+		if (orientation != 1 || wasJumping==true )
 		{
+			wasJumping = false;
 			orientation = 1;
 			rederer->SetTexturePath("source/resources/idle.png", true, true);
 			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
@@ -59,21 +59,34 @@ void MovementComponent::On_Update(const float delta_time)
 	}
 
 
-	if (isJumping)
+	if (isJumping == true)
 	{
-		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
-							  GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
+		if (GetMotionVector().x == -1 && isJumping == true)
+		{
+				orientation = -1;
+				rederer->SetTexturePath("source/resources/backJump.png", true, true);
+				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+			
+		}
+		else if (GetMotionVector().x == 1)
+		{	
+				orientation = 1;
+				rederer->SetTexturePath("source/resources/Jump.png", true, true);
+				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+		}
 	}
 
-	else {
-		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
-						      GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
-	}
+
+	nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
+											 GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
 	//printf("new pos: %f, %f\n", nextPos.x, nextPos.y);
 
 	//Gravity like negative Yaxis acceleration implementation
 	nextPos.y += 14,6 * delta_time * delta_time;
 	transform->SetPosition(nextPos.x, nextPos.y);
+
+
+
 	//Decreasing jump force
 	currentJumpForce -= 14, 6 * delta_time * delta_time;
 	if(currentJumpForce<=0.0f)
@@ -81,6 +94,12 @@ void MovementComponent::On_Update(const float delta_time)
 		currentJumpForce = 0.0f;
 	}
 
+
+	if (collider->collisionDirection->y == 1)
+	{
+		isJumping = false;
+		wasJumping = true;
+	}
 }
 
 void MovementComponent::Jump()
@@ -92,7 +111,7 @@ void MovementComponent::Jump()
 			//printf("								Jumping\n\n\n");
 			currentJumpForce = maxJumpForce;
 			isJumping = true;
+			wasJumping = false;
 			collider->collisionDirection->y = 0;
 		}
-		else if(collider->collisionDirection->y == 1) { isJumping = false; }
 }
