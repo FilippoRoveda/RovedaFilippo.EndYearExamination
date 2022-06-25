@@ -8,6 +8,7 @@
 #include "Components/Collider.h"
 #include "Components/MusicComponent.h"
 #include "Classes/MusicObject.h"
+#include "Components/AnimationComponent.h"
 
 
 #include "iostream"
@@ -216,34 +217,28 @@ void Application::Initialize()
 	wa->rectTransform->SetPosition(500, 800);
 	wa->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
 	wa->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(wa);
+	allEntities.push_back(wa);*/
 
-	auto w = new Sprite();
-	w->renderer->SetTexturePath("", true, true);
-	auto i = new Collider(w->rectTransform, 0.0f);
-	w->Add_Component(i);
-	w->rectTransform->SetScale(1, 1);
-	w->rectTransform->SetPosition(1500, 200);
-	w->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
-	w->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(w);*/
 
-	auto mainPG = new Character();
-	mainPG->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
-	mainPG->rectTransform->SetScale(1, 1);
-	mainPG->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
-	mainPG->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
-	mainPG->movementComponent->speed = 200;
-	mainPG->rectTransform->SetPosition(800, 400);
-	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, mainPG);
-	mainPG->Add_Component(mainCamera);
+	auto Pg = new Character();
+	Pg->renderer->SetTexturePath("source/resources/idle.png", true, true);
+	Pg->rectTransform->GetTransform()->setTextureRect(sf::IntRect(0,0,300,300));
+	Pg->rectTransform->SetScale(1, 1);
+	Pg->rectTransform->GetTransform()->setSize(sf::Vector2f{ 400,400 });
+	Pg->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 400 / 2, 400 / 2 });
+	Pg->movementComponent->speed = 200;
+	Pg->rectTransform->SetPosition(800, 400);
+	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, Pg);
+	Pg->Add_Component(mainCamera);
+	auto anim = new AnimationComponent(Pg->rectTransform, sf::Vector2u(3,1), 0.6f);
+	Pg->Add_Component(anim);
 
-	allEntities.push_back(mainPG);
+	allEntities.push_back(Pg);
 
 	/*auto seeker = new Agent(this);
 	Collider* coll = new Collider(seeker->rectTransform, 1.0f);
 	seeker->Add_Component(coll);
-	seeker->renderer->SetTexturePath("source/resources/hitler.jpg", true, true);
+	seeker->renderer->SetTexturePath("", true, true);
 	seeker->rectTransform->SetScale(256, 256);
 	seeker->rectTransform->SetPosition(500, 0);
 	allEntities.push_back(seeker);*/
@@ -252,7 +247,7 @@ void Application::Initialize()
 void Application::Run()
 {
 	Initialize();
-	PlayMusicsInScene();
+	//PlayMusicsInScene();
 	SetSceneCamera();
 	lastTime = tm.getCurrentTime();
 	while (_Window->isOpen())

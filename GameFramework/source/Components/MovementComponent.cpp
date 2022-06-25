@@ -4,7 +4,7 @@
 MovementComponent::MovementComponent() : Component ("Movement Component")
 {
 	speed = 1000;
-	jumpForce = 0;
+	currentJumpForce = 0;
 }
 
 MovementComponent::~MovementComponent()
@@ -33,28 +33,40 @@ sf::Vector2f MovementComponent::GetMotionVector()
 void MovementComponent::On_Update(const float delta_time)
 {
 	if (!IsMotionValid()) return;
-
 	auto nextPos = sf::Vector2f{ 0,0 };
-	if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
-	else if(GetMotionVector().x == 1) { transform->GetTransform()->setScale(1, 1); }
+
+	if (GetMotionVector().x == -1) 
+	{
+		transform->GetTransform()->setScale(-1, 1); 
+		//transform->GetTransform()->setTextureRect();
+	}
+	else if(GetMotionVector().x == 1) 
+	{
+
+		transform->GetTransform()->setScale(1, 1); 
+	}
+
+
 	if (isJumping)
 	{
-		if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
 		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
-							  GetMotionVector().y * speed * delta_time - jumpForce * delta_time);
+							  GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
 	}
 
 	else {
 		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
-						      GetMotionVector().y * speed * delta_time - jumpForce * delta_time);
+						      GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
 	}
 	//printf("new pos: %f, %f\n", nextPos.x, nextPos.y);
+
+	//Gravity like negative Yaxis acceleration implementation
 	nextPos.y += 14,6 * delta_time * delta_time;
 	transform->SetPosition(nextPos.x, nextPos.y);
-	jumpForce -= 14, 6 * delta_time * delta_time;
-	if(jumpForce<=0.0f)
+	//Decreasing jump force
+	currentJumpForce -= 14, 6 * delta_time * delta_time;
+	if(currentJumpForce<=0.0f)
 	{
-		jumpForce = 0.0f;
+		currentJumpForce = 0.0f;
 	}
 
 }
@@ -65,8 +77,8 @@ void MovementComponent::Jump()
 	//std::cout << "COLL DIR IN MOV:" << collider->collisionDirection.x << "     " << collider->collisionDirection.y << std::endl;
 		if ( collider->collisionDirection->y == 1 && isJumping == false)
 		{
-			printf("								Jumping\n\n\n");
-			jumpForce = 1300;
+			//printf("								Jumping\n\n\n");
+			currentJumpForce = maxJumpForce;
 			isJumping = true;
 			collider->collisionDirection->y = 0;
 		}

@@ -14,7 +14,8 @@ class MovementComponent : public Component
 public:
 	float speed;
 	bool isJumping = false;
-	float jumpForce;
+	float maxJumpForce = 1300;
+	float currentJumpForce;
 
 	Controller* inputController = nullptr;
 	RectTranform* transform = nullptr;
