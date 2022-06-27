@@ -21,11 +21,11 @@ public:
 	GameObjectsFactory(Application* context) { this->context = context; };
 	~GameObjectsFactory() {};
 
-	virtual GameObject* NormalBlock() = 0;
-	virtual GameObject* BackGround() = 0;
+	virtual GameObject* NormalBlock(sf::Vector2f position) = 0;
+	virtual GameObject* BackGround(sf::Vector2f position) = 0;
 	virtual GameObject* GroundLayer() = 0;
-	virtual GameObject* MainCharacter() = 0;
-	virtual GameObject* Seeker() = 0;
+	virtual GameObject* MainCharacter(sf::Vector2f position) = 0;
+	virtual GameObject* Seeker(sf::Vector2f position) = 0;
 
 };
 
@@ -35,9 +35,10 @@ public:
 	FirstLevelFactory(Application* context) { this->context = context; };
 	~FirstLevelFactory() {};
 
-	 GameObject* NormalBlock() override;
-	 GameObject* BackGround() override;
+	 GameObject* NormalBlock(sf::Vector2f position) override;
+	 GameObject* BackGround(sf::Vector2f position) override;
+	 GameObject* BackGroundandMusic(sf::Vector2f position);
 	 GameObject* GroundLayer() override;
-	 GameObject* MainCharacter() override;
-	 GameObject* Seeker() override;
+	 GameObject* MainCharacter(sf::Vector2f position) override;
+	 GameObject* Seeker(sf::Vector2f position) override;
 };

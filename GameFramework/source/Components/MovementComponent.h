@@ -4,6 +4,7 @@
 #include "..\Components\RectTransform.h"
 #include "..\Components\Controller.h"
 #include "..\Components\Collider.h"
+#include "..\Components\Renderer2D.h"
 
 /**
  * \brief Component to move object with a RectTransform component inside the world scene
@@ -14,38 +15,87 @@ class MovementComponent : public Component
 public:
 	float speed;
 	bool isJumping = false;
-<<<<<<< Updated upstream
-	float jumpForce;
-=======
 	bool wasJumping = false;
-	bool wasMoving = false;
-	float maxJumpForce = 1300;
+	float maxJumpForce = 1100;
 	float currentJumpForce;
->>>>>>> Stashed changes
 
 	Controller* inputController = nullptr;
 	RectTranform* transform = nullptr;
 	Collider* collider = nullptr;
+	Renderer2D* rederer = nullptr;
+
 
 protected:
+	int orientation = 1;
 	sf::Vector2f direction = {0,0};
 	sf::Vector2f velocity = {0,0};
 
 public:
 	MovementComponent();
 	~MovementComponent() override;
-
+	/// <summary>
+	/// Set collider Handled by this compnent.
+	/// </summary>
+	/// <returns></returns>
 	void SetCollider(Collider* collider) { this->collider = collider; }
+
+	/// <summary>
+	/// Remove collider Handled by this compnent.
+	/// </summary>
+	/// <returns></returns>
 	void RemoveCollider() { collider = nullptr; }
 
-	[[nodiscard]] sf::Vector2f GetVelocity();
-	void SetVelocity(float speed) { this->speed = speed; }
-	[[nodiscard]] sf::Vector2f GetMotionVector();
+	/// <summary>
+	/// Set renderer Handled by this compnent.
+	/// </summary>
+	/// <returns></returns>
+	void SetRenderer(Renderer2D* rederer) { this->rederer = rederer; }
 
+	/// <summary>
+	/// Remove renderer Handled by this compnent.
+	/// </summary>
+	/// <returns></returns>
+	void RemoveRenderer() { rederer = nullptr; }
+
+
+	/// <summary>
+	/// Calculate velocity based on the direction returned by handled controller.
+	/// </summary>
+	/// <returns>actualVelocity</returns>
+	[[nodiscard]] sf::Vector2f GetVelocity();
+
+	/// <summary>
+	///	Set speed for that moved GameObject.
+	/// </summary>
+	/// <returns>speed</returns>
+	void SetSpeed(float speed) { this->speed = speed; }
+
+	/// <summary>
+	///	Return the motion versor of the actual GameObject velocity.
+	/// </summary>
+	/// <returns>motion versor</returns>
+	[[nodiscard]] sf::Vector2f GetMotionVersor();
+
+	/// <summary>
+	///	Return false if no movement input is detected.
+	/// </summary>
+	/// <returns>true or false</returns>
 	[[nodiscard]] bool IsMotionValid() 
 	{ return (inputController->forwardMovement || inputController->rightwardMovement); }
 
+
+
+	/// <summary>
+	///	Update position and animation of the current handled GameObject.
+	/// Handle jump force using also a gravity like negative Yaxis accelation.
+	/// </summary>
+	/// <returns></returns>
 	void On_Update(const float delta_time) override;
 
+
+	/// <summary>
+	///	If the player is touching a surface whit his lower side consent a jump action.
+	/// </summary>
+	/// <returns></returns>
 	void Jump();
 };

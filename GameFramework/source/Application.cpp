@@ -1,31 +1,15 @@
 #include "Application.h"
 #include "Components/Component.h"
-//#include "Classes/IDrawable.h"
 #include "Components/RectTransform.h"
-<<<<<<< Updated upstream
-#include "Classes/Sprite.h"
-#include "Classes/Character.h"
-#include "Classes/Agent.h"
-#include "Components/Collider.h"
-#include "Components/MusicComponent.h"
-#include "Classes/MusicObject.h"
-=======
-//#include "Classes/Sprite.h"
-//#include "Classes/Character.h"
-//#include "Classes/Agent.h"
-//#include "Components/Collider.h"
-//#include "Components/MusicComponent.h"
-//#include "Classes/MusicObject.h"
-//#include "Components/AnimationComponent.h"
 #include "..\source\Classes\GameObjectFactory.h"
->>>>>>> Stashed changes
-
 
 #include "iostream"
 #include "SFML/Graphics.hpp"
 
 
-
+/// <summary>
+/// Default constructor, set _Window to nullptr, fpsLimitEnabled = false and maxFPS to 0.
+/// </summary>
 Application::Application()
 {
 	_Window = nullptr;
@@ -34,6 +18,9 @@ Application::Application()
 	backgroundcolor = sf::Color::Black;
 }
 
+/// <summary>
+/// Default destructor.
+/// </summary>
 Application::~Application()
 {
 	delete this;
@@ -127,6 +114,11 @@ void Application::SetSceneCamera()
 ////
 ////	GameLoop functions
 ////
+
+
+	/// <summary>
+	/// Update currentTime, calculate elapsedTime, add lag and setLastTime as the last currentTime.
+	/// </summary>
 void Application::UpdateGameTime()
 {
 	currentTime = tm.getCurrentTime();
@@ -141,6 +133,11 @@ void Application::UpdateGameTime()
 /// <returns>total frames</returns>
 unsigned Application::GetFrameRate()const { return 1 / elapsedTime; }
 
+
+/// <summary>
+/// Process all window events using sf::Event SFML class.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::ProcessWindowEvents()
 {
 	sf::Event evt{};
@@ -157,6 +154,11 @@ void Application::ProcessWindowEvents()
 	}
 }
 
+
+/// <summary>
+/// Resize the window view based on actual size of the window.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::ResizeView()
 {
 	float aspectRatio = float(_Window->getSize().x) / float(_Window->getSize().y);
@@ -181,7 +183,10 @@ void Application::Update()
 	}
 }
 
-
+/// <summary>
+/// Render all transform in RectTranform components of all GameObjects in allEntities.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::Draw()
 {
 	_Window->clear(backgroundcolor);
@@ -201,10 +206,45 @@ void Application::Draw()
 
 void Application::Initialize()
 {
-	
-	
+	auto sky = new Sprite();
+	sky->renderer->SetTexturePath("source/resources/void.png", true, true);
+	sky->rectTransform->SetScale(10000000, 3000);
+	sky->rectTransform->SetPosition(-10000,-500);
+	AddEntity(sky);
+	auto factory = new FirstLevelFactory(this);
+	AddEntity(factory->BackGroundandMusic(sf::Vector2f(0, 150)));
+	AddEntity(factory->BackGround(sf::Vector2f(-1920, 150)));
+	AddEntity(factory->BackGround(sf::Vector2f(-3840, 150)));
+	AddEntity(factory->BackGround(sf::Vector2f(1920, 150)));
+	AddEntity(factory->BackGround(sf::Vector2f(3840, 150)));
+	AddEntity(factory->GroundLayer());
+
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 880)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 720)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 560)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 400)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 240)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 80)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -40)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -200)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -360)));
+
+
+	AddEntity(factory->NormalBlock(sf::Vector2f(400, 700)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(800, 700)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(1200, 700)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(1600, 400)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(2200, 400)));
+
+	AddEntity(factory->MainCharacter(sf::Vector2f(200, 600)));
+	AddEntity(factory->Seeker(sf::Vector2f(-200, 200)));
+
 }
 
+
+/// <summary>
+/// Executes application lifecycle.
+/// </summary>
 void Application::Run()
 {
 	Initialize();
@@ -235,6 +275,11 @@ void Application::Run()
 	}
 }
 
+
+/// <summary>
+/// Check collision event between every GameObject thas has a collider.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::CheckCollision() {
 
 	std::vector<Collider*> colliders;
@@ -258,6 +303,11 @@ void Application::CheckCollision() {
 	}
 }
 
+
+/// <summary>
+/// Play music sound piece from all MusicComponents and MusicObjects.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::PlayMusicsInScene()
 {
 	std::vector<MusicComponent*> musics;
@@ -287,3 +337,7 @@ void Application::PlayMusicsInScene()
 		}
 	}
 }
+
+
+
+

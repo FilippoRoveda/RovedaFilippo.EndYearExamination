@@ -14,6 +14,9 @@ private:
 	Character* myChar;
 	int priority;
 
+	float xpos = 0.0f;
+	float ypos = 0.0f;
+
 protected:
 	void On_Update(const float delta_time) override;
 	void On_Fixed_Update(const float delta_time) override;
