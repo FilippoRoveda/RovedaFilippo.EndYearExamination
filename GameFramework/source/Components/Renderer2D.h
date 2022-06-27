@@ -12,7 +12,7 @@ class Renderer2D : public Component
 {
 	friend class Application;
 
-private:
+protected:
 	sf::Texture* _texture;
 
 public:
