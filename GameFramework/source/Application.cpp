@@ -201,74 +201,8 @@ void Application::Draw()
 
 void Application::Initialize()
 {
-<<<<<<< Updated upstream
-	auto background = new Sprite();
-	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
-	background->rectTransform->SetScale(1920, 1080);
-	auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
-	background->Add_Component(soundTrack);
-	allEntities.push_back(background);
-
-	auto groundLayer = new Sprite();
-	groundLayer->renderer->SetTexturePath("", true, true);
-	auto collider = new Collider(groundLayer->rectTransform, 1.0f);
-	collider->isMovable = false;
-	groundLayer->Add_Component(collider);
-	groundLayer->rectTransform->SetScale(1, 1);
-	groundLayer->rectTransform->SetPosition(1000, 800);
-	groundLayer->rectTransform->GetTransform()->setSize(sf::Vector2f{10000000000,2});
-	groundLayer->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 10000000000/2, 1 });
-	allEntities.push_back(groundLayer);
-
-	/*auto wa = new Sprite();
-	wa->renderer->SetTexturePath("", true, true);
-	auto c = new Collider(wa->rectTransform, 0.0f);
-	wa->Add_Component(c);
-	wa->rectTransform->SetScale(1, 1);
-	wa->rectTransform->SetPosition(500, 800);
-	wa->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
-	wa->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(wa);
-
-	auto w = new Sprite();
-	w->renderer->SetTexturePath("", true, true);
-	auto i = new Collider(w->rectTransform, 0.0f);
-	w->Add_Component(i);
-	w->rectTransform->SetScale(1, 1);
-	w->rectTransform->SetPosition(1500, 200);
-	w->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
-	w->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(w);*/
-
-	auto mainPG = new Character();
-	mainPG->renderer->SetTexturePath("source/resources/duce.jpg", true, true);
-	mainPG->rectTransform->SetScale(1, 1);
-	mainPG->rectTransform->GetTransform()->setSize(sf::Vector2f{ 185,300 });
-	mainPG->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 185 / 2, 300 / 2 });
-	mainPG->movementComponent->speed = 200;
-	mainPG->rectTransform->SetPosition(800, 400);
-	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, mainPG);
-	mainPG->Add_Component(mainCamera);
-
-	allEntities.push_back(mainPG);
-
-	/*auto seeker = new Agent(this);
-	Collider* coll = new Collider(seeker->rectTransform, 1.0f);
-	seeker->Add_Component(coll);
-	seeker->renderer->SetTexturePath("source/resources/hitler.jpg", true, true);
-	seeker->rectTransform->SetScale(256, 256);
-	seeker->rectTransform->SetPosition(500, 0);
-	allEntities.push_back(seeker);*/
-=======
-	auto factoryLV1 = new FirstLevelFactory(this);
 	
 	
-
-
-	
-
-
->>>>>>> Stashed changes
 }
 
 void Application::Run()
@@ -353,7 +287,3 @@ void Application::PlayMusicsInScene()
 		}
 	}
 }
-
-
-
-

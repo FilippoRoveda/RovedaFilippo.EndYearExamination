@@ -33,7 +33,6 @@ sf::Vector2f MovementComponent::GetMotionVector()
 void MovementComponent::On_Update(const float delta_time)
 {
 	if (!IsMotionValid()) return;
-<<<<<<< Updated upstream
 
 	auto nextPos = sf::Vector2f{ 0,0 };
 	if (GetMotionVector().x == -1) { transform->GetTransform()->setScale(-1, 1); }
@@ -49,7 +48,7 @@ void MovementComponent::On_Update(const float delta_time)
 		 nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
 						      GetMotionVector().y * speed * delta_time - jumpForce * delta_time);
 	}
-=======
+
 	auto nextPos = sf::Vector2f{ 0,0 };
 
 	
@@ -97,18 +96,16 @@ void MovementComponent::On_Update(const float delta_time)
 
 	nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
 	
->>>>>>> Stashed changes
 	//printf("new pos: %f, %f\n", nextPos.x, nextPos.y);
 	nextPos.y += 14,6 * delta_time * delta_time;
 	transform->SetPosition(nextPos.x, nextPos.y);
-<<<<<<< Updated upstream
 	jumpForce -= 14, 6 * delta_time * delta_time;
 	if(jumpForce<=0.0f)
 	{
 		jumpForce = 0.0f;
 	}
 
-=======
+
 
 	//Decreasing jump force
 	currentJumpForce -= 14, 6 * delta_time * delta_time;
@@ -118,7 +115,6 @@ void MovementComponent::On_Update(const float delta_time)
 		isJumping = false;
 		wasJumping = true;
 	}
->>>>>>> Stashed changes
 }
 
 void MovementComponent::Jump()
