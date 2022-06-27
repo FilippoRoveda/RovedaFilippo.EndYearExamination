@@ -1,15 +1,7 @@
 #include "Application.h"
 #include "Components/Component.h"
-#include "Classes/IDrawable.h"
 #include "Components/RectTransform.h"
-#include "Classes/Sprite.h"
-#include "Classes/Character.h"
-#include "Classes/Agent.h"
-#include "Components/Collider.h"
-#include "Components/MusicComponent.h"
-#include "Classes/MusicObject.h"
-#include "Components/AnimationComponent.h"
-
+#include "..\source\Classes\GameObjectFactory.h"
 
 #include "iostream"
 #include "SFML/Graphics.hpp"
@@ -191,67 +183,21 @@ void Application::Draw()
 
 void Application::Initialize()
 {
+	auto factory = new FirstLevelFactory(this);
+	AddEntity(factory->BackGroundandMusic(sf::Vector2f(0,50)));
+	AddEntity(factory->BackGround(sf::Vector2f(-1920, 50)));
+	AddEntity(factory->BackGround(sf::Vector2f(-3840, 50)));
+	AddEntity(factory->BackGround(sf::Vector2f(1920, 50)));
+	AddEntity(factory->BackGround(sf::Vector2f(3840, 50)));
+	AddEntity(factory->GroundLayer());
+	AddEntity(factory->MainCharacter(sf::Vector2f(200, 600)));
 
-	auto background = new Sprite();
-	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
-	background->rectTransform->SetScale(1920, 1080);
-	auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 100, true);
-	background->rectTransform->SetPosition(0,50);
-	background->Add_Component(soundTrack);
-	allEntities.push_back(background);
-	
-
-	auto groundLayer = new Sprite();
-	groundLayer->renderer->SetTexturePath("", true, true);
-	auto collider = new Collider(groundLayer->rectTransform, 1.0f);
-	collider->isMovable = false;
-	groundLayer->Add_Component(collider);
-	groundLayer->rectTransform->SetScale(1, 1);
-	groundLayer->rectTransform->SetPosition(1000, 800);
-	groundLayer->rectTransform->GetTransform()->setSize(sf::Vector2f{10000000000,2});
-	groundLayer->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 10000000000/2, 1 });
-	allEntities.push_back(groundLayer);
-
-	/*auto wa = new Sprite();
-	wa->renderer->SetTexturePath("", true, true);
-	auto c = new Collider(wa->rectTransform, 0.0f);
-	wa->Add_Component(c);
-	wa->rectTransform->SetScale(1, 1);
-	wa->rectTransform->SetPosition(500, 800);
-	wa->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,1000 });
-	wa->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 1000 / 2 });
-	allEntities.push_back(wa);*/
-
-
-	auto Pg = new Character();
-	Pg->renderer->SetTexturePath("source/resources/idle.png", true, true);
-	Pg->rectTransform->GetTransform()->setTextureRect(sf::IntRect(0,0,300,300));
-	Pg->rectTransform->SetScale(1, 1);
-	Pg->rectTransform->GetTransform()->setSize(sf::Vector2f{ 400,400 });
-	Pg->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 400 / 2, 400 / 2 });
-	Pg->movementComponent->speed = 200;
-	Pg->rectTransform->SetPosition(800, 400);
-	Pg->movementComponent->SetRenderer(Pg->renderer);
-	auto mainCamera = new CameraComponent(sf::Vector2f(860.0f,540.0f),sf::Vector2f(1920.0f,1080.0f), this, 0, Pg);
-	Pg->Add_Component(mainCamera);
-	auto anim = new AnimationComponent(Pg->rectTransform, sf::Vector2u(3,1), 0.6f);
-	Pg->Add_Component(anim);
-
-	allEntities.push_back(Pg);
-
-	/*auto seeker = new Agent(this);
-	Collider* coll = new Collider(seeker->rectTransform, 1.0f);
-	seeker->Add_Component(coll);
-	seeker->renderer->SetTexturePath("", true, true);
-	seeker->rectTransform->SetScale(256, 256);
-	seeker->rectTransform->SetPosition(500, 0);
-	allEntities.push_back(seeker);*/
 }
 
 void Application::Run()
 {
 	Initialize();
-	//PlayMusicsInScene();
+	PlayMusicsInScene();
 	SetSceneCamera();
 	lastTime = tm.getCurrentTime();
 	while (_Window->isOpen())

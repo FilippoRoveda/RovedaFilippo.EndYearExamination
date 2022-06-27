@@ -38,7 +38,7 @@ void MovementComponent::On_Update(const float delta_time)
 	if ((GetMotionVector().x == -1 && isJumping == false))
 	{
 
-		if ((orientation != -1 || wasJumping==true))
+		if (orientation != -1 || (orientation == -1 && wasJumping==true))
 		{
 			wasJumping = false;
 			orientation = -1;
@@ -49,7 +49,7 @@ void MovementComponent::On_Update(const float delta_time)
 	}
 	else if(GetMotionVector().x == 1 && isJumping == false)
 	{
-		if (orientation != 1 || wasJumping==true )
+		if (orientation != 1 || (orientation == 1 && wasJumping == true))
 		{
 			wasJumping = false;
 			orientation = 1;
@@ -95,7 +95,7 @@ void MovementComponent::On_Update(const float delta_time)
 	}
 
 
-	if (collider->collisionDirection->y == 1)
+	if (collider->collisionDirection->y == 1 && isJumping == true)
 	{
 		isJumping = false;
 		wasJumping = true;
