@@ -2,7 +2,7 @@
 #include "..\Components\Controller.h"
 #include "Components/MovementComponent.h"
 
-
+//Update shaped around a 2D Platform like character
 void Controller::On_Update(const float delta_time)
 {
 	Component::On_Update(delta_time);
@@ -72,21 +72,11 @@ void Controller::On_Fixed_Update(const float delta_time)
 
 }
 
-Controller::Controller() : Component("Controller")
-{
-	forwardMovement = false;
-	rightwardMovement = true;
-	XAxis = 0;
-	YAxis = 0;
-}
+Controller::Controller() : Component("Controller"){}
 
 Controller::Controller(MovementComponent* movementComponent ) : Component ("Controller")
 {
 	this->movementComponent = movementComponent;
-	forwardMovement = false;
-	rightwardMovement = true;
-	XAxis = 0;
-	YAxis = 0;
 }
 
 Controller::~Controller() = default;

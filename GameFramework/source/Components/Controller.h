@@ -13,13 +13,11 @@ class Controller : public Component
 	friend class MovementComponent;
 
 private:
-	bool forwardMovement;
-	bool rightwardMovement;
-	float XAxis, YAxis;
+	bool forwardMovement = false;
+	bool rightwardMovement = true;
+	float XAxis = 0.0f, YAxis = 0.0f;
 
 	MovementComponent* movementComponent;
-
-
 
 
 protected:
@@ -31,6 +29,11 @@ public:
 	Controller(MovementComponent* movementComponent );
 	~Controller() override;
 
+
+	/**
+* \Set linked MovementComponent
+* \return void
+*/
 	void SetMovementComponent(MovementComponent* movementComponent) {
 		this->movementComponent = movementComponent;
 	}

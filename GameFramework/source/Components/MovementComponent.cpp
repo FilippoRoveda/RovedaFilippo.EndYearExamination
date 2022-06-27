@@ -3,7 +3,7 @@
 
 MovementComponent::MovementComponent() : Component ("Movement Component")
 {
-	speed = 1000;
+	speed = 100;
 	currentJumpForce = 0;
 }
 
@@ -35,6 +35,8 @@ void MovementComponent::On_Update(const float delta_time)
 	if (!IsMotionValid()) return;
 	auto nextPos = sf::Vector2f{ 0,0 };
 
+
+	//BackWard active movement case
 	if ((GetMotionVersor().x == -1 && isJumping == false))
 	{
 
@@ -47,6 +49,7 @@ void MovementComponent::On_Update(const float delta_time)
 		}
 
 	}
+	//Forward active movement case
 	else if(GetMotionVersor().x == 1 && isJumping == false)
 	{
 		if (orientation != 1 || (orientation == 1 && wasJumping == true))
@@ -58,9 +61,10 @@ void MovementComponent::On_Update(const float delta_time)
 		}
 	}
 
-
+	//Jumping cases
 	if (isJumping == true)
 	{
+		//Backward
 		if (GetMotionVersor().x == -1 && isJumping == true)
 		{
 				orientation = -1;
@@ -68,6 +72,7 @@ void MovementComponent::On_Update(const float delta_time)
 				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 			
 		}
+		//Foreward
 		else if ((GetMotionVersor().x == 1 || (GetMotionVersor().x == 0 && orientation == 1)) && isJumping == true)
 		{	
 				orientation = 1;
@@ -76,10 +81,10 @@ void MovementComponent::On_Update(const float delta_time)
 		}
 	}
 
-
+	//Updating Position
 	nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVersor().x * 600 * delta_time, 
 											 GetMotionVersor().y * speed * delta_time - currentJumpForce * delta_time);
-	//printf("new pos: %f, %f\n", nextPos.x, nextPos.y);
+
 
 	//Gravity like negative Yaxis acceleration implementation
 	nextPos.y += 14,6 * delta_time * delta_time;
@@ -88,7 +93,7 @@ void MovementComponent::On_Update(const float delta_time)
 
 
 	//Decreasing jump force
-	currentJumpForce -= 23, 6 * delta_time * delta_time;
+	currentJumpForce -= 19, 6 * delta_time * delta_time;
 	if(currentJumpForce<=0.0f)
 	{
 		currentJumpForce = 0.0f;

@@ -16,9 +16,11 @@ public:
 	float speed;
 	bool isJumping = false;
 	bool wasJumping = false;
-	float maxJumpForce = 1100;
+	float maxJumpForce = 1400;
 	float currentJumpForce;
 
+
+	//Context pointer links
 	Controller* inputController = nullptr;
 	RectTranform* transform = nullptr;
 	Collider* collider = nullptr;
