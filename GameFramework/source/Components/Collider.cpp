@@ -40,7 +40,7 @@ bool Collider::CheckCollision(Collider* other, float push)
 
 				other->collisionDirection->x = 1.0f;
 				other->collisionDirection->y = 0.0f;
-				printf("						Collision SX\n");
+				//printf("						Collision SX\n");
 				
 			}
 			else
@@ -53,10 +53,10 @@ bool Collider::CheckCollision(Collider* other, float push)
 
 				other->collisionDirection->x = -1.0f;
 				other->collisionDirection->y = 0.0f;
-				printf("						Collision DX\n");
+				//printf("						Collision DX\n");
 				
 			}
-			std::cout << "COLLISION DIR:" << collisionDirection->x << "     " << collisionDirection->y << std::endl;
+			//std::cout << "COLLISION DIR:" << collisionDirection->x << "     " << collisionDirection->y << std::endl;
 		}
 		else
 		{
@@ -70,7 +70,7 @@ bool Collider::CheckCollision(Collider* other, float push)
 				other->collisionDirection->x = 0.0f;
 				other->collisionDirection->y = -1.0f;
 
-				printf("						Collision SU\n");
+				//printf("						Collision SU\n");
 				
 			}
 			else
@@ -85,10 +85,10 @@ bool Collider::CheckCollision(Collider* other, float push)
 				other->collisionDirection->x = 0.0f;
 				other->collisionDirection->y = 1.0f;
 
-				printf("						Collision GIU\n");
+				//printf("						Collision GIU\n");
 				
 			}
-			std::cout << "COLLISION DIR:" << collisionDirection->x << "     " << collisionDirection->y << std::endl;
+			//std::cout << "COLLISION DIR:" << collisionDirection->x << "     " << collisionDirection->y << std::endl;
 		}
 		return true;
 	}

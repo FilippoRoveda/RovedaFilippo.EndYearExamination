@@ -14,7 +14,14 @@ class MovementComponent : public Component
 public:
 	float speed;
 	bool isJumping = false;
+<<<<<<< Updated upstream
 	float jumpForce;
+=======
+	bool wasJumping = false;
+	bool wasMoving = false;
+	float maxJumpForce = 1300;
+	float currentJumpForce;
+>>>>>>> Stashed changes
 
 	Controller* inputController = nullptr;
 	RectTranform* transform = nullptr;

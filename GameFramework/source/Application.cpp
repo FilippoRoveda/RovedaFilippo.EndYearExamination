@@ -1,13 +1,24 @@
 #include "Application.h"
 #include "Components/Component.h"
-#include "Classes/IDrawable.h"
+//#include "Classes/IDrawable.h"
 #include "Components/RectTransform.h"
+<<<<<<< Updated upstream
 #include "Classes/Sprite.h"
 #include "Classes/Character.h"
 #include "Classes/Agent.h"
 #include "Components/Collider.h"
 #include "Components/MusicComponent.h"
 #include "Classes/MusicObject.h"
+=======
+//#include "Classes/Sprite.h"
+//#include "Classes/Character.h"
+//#include "Classes/Agent.h"
+//#include "Components/Collider.h"
+//#include "Components/MusicComponent.h"
+//#include "Classes/MusicObject.h"
+//#include "Components/AnimationComponent.h"
+#include "..\source\Classes\GameObjectFactory.h"
+>>>>>>> Stashed changes
 
 
 #include "iostream"
@@ -190,6 +201,7 @@ void Application::Draw()
 
 void Application::Initialize()
 {
+<<<<<<< Updated upstream
 	auto background = new Sprite();
 	background->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
 	background->rectTransform->SetScale(1920, 1080);
@@ -247,6 +259,16 @@ void Application::Initialize()
 	seeker->rectTransform->SetScale(256, 256);
 	seeker->rectTransform->SetPosition(500, 0);
 	allEntities.push_back(seeker);*/
+=======
+	auto factoryLV1 = new FirstLevelFactory(this);
+	
+	
+
+
+	
+
+
+>>>>>>> Stashed changes
 }
 
 void Application::Run()
