@@ -33,7 +33,10 @@ void CameraComponent::SetView()
 void CameraComponent::On_Update(const float delta_time)
 {
 	sf::View& cam = *(cameraView);
-	cameraView->setCenter(myChar->rectTransform->GetTransform()->getPosition());
+	auto xpos = myChar->rectTransform->GetTransform()->getPosition().x;
+	auto ypos = myChar->rectTransform->GetTransform()->getPosition().y;
+	if (ypos < 300) { ypos = 300; }
+	cameraView->setCenter(xpos,ypos);
 	context->_Window->setView(cam);
 }
 

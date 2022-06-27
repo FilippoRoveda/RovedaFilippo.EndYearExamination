@@ -78,6 +78,9 @@
     <ClCompile Include="source\Components\AnimationComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Classes\GameObjectFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\Application.h">
@@ -152,5 +155,45 @@
     <ClInclude Include="source\Components\AnimationComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Classes\GameObjectFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="source\resources\music1.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="source\resources\BackIdle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\backJump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\brick.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\Idle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\Jump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\roma.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\walkBackward.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\walkForward.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\ghost.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="source\resources\void.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

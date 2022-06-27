@@ -16,7 +16,7 @@ public:
 	float speed;
 	bool isJumping = false;
 	bool wasJumping = false;
-	float maxJumpForce = 1300;
+	float maxJumpForce = 1100;
 	float currentJumpForce;
 
 	Controller* inputController = nullptr;

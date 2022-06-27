@@ -43,7 +43,7 @@ void MovementComponent::On_Update(const float delta_time)
 			wasJumping = false;
 			orientation = -1;
 			rederer->SetTexturePath("source/resources/BackIdle.png", true, true);
-			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 		}
 
 	}
@@ -54,7 +54,7 @@ void MovementComponent::On_Update(const float delta_time)
 			wasJumping = false;
 			orientation = 1;
 			rederer->SetTexturePath("source/resources/idle.png", true, true);
-			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+			transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 		}
 	}
 
@@ -65,14 +65,14 @@ void MovementComponent::On_Update(const float delta_time)
 		{
 				orientation = -1;
 				rederer->SetTexturePath("source/resources/backJump.png", true, true);
-				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 			
 		}
-		else if (GetMotionVector().x == 1)
+		else if ((GetMotionVector().x == 1 || (GetMotionVector().x == 0 && orientation == 1)) && isJumping == true)
 		{	
 				orientation = 1;
 				rederer->SetTexturePath("source/resources/Jump.png", true, true);
-				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 300, 300));
+				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 		}
 	}
 
@@ -88,7 +88,7 @@ void MovementComponent::On_Update(const float delta_time)
 
 
 	//Decreasing jump force
-	currentJumpForce -= 14, 6 * delta_time * delta_time;
+	currentJumpForce -= 23, 6 * delta_time * delta_time;
 	if(currentJumpForce<=0.0f)
 	{
 		currentJumpForce = 0.0f;

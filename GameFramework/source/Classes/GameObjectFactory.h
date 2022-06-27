@@ -25,7 +25,7 @@ public:
 	virtual GameObject* BackGround(sf::Vector2f position) = 0;
 	virtual GameObject* GroundLayer() = 0;
 	virtual GameObject* MainCharacter(sf::Vector2f position) = 0;
-	virtual GameObject* Seeker() = 0;
+	virtual GameObject* Seeker(sf::Vector2f position) = 0;
 
 };
 
@@ -40,5 +40,5 @@ public:
 	 GameObject* BackGroundandMusic(sf::Vector2f position);
 	 GameObject* GroundLayer() override;
 	 GameObject* MainCharacter(sf::Vector2f position) override;
-	 GameObject* Seeker() override;
+	 GameObject* Seeker(sf::Vector2f position) override;
 };

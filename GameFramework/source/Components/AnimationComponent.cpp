@@ -21,7 +21,7 @@ void AnimationComponent::On_Update(const float delta_time)
 	if (animated->GetTransform()->getTexture() != currentTexture)
 	{
 		currentTexture = animated->GetTransform()->getTexture();
-		imgCount = { currentTexture->getSize().x / 300, currentTexture->getSize().y / 300 };
+		imgCount = { currentTexture->getSize().x / 168, currentTexture->getSize().y / 356 };
 	}
 
 	currentImg.y = 1;
@@ -38,7 +38,7 @@ void AnimationComponent::On_Update(const float delta_time)
 		}
 		uvRect.left = currentImg.x; //* uvRect.width;
 		//uvRect.top = currentImg.y; //* uvRect.height;
-		animated->GetTransform()->setTextureRect(sf::IntRect(uvRect.left*uvRect.width, 1, 300,300));
+		animated->GetTransform()->setTextureRect(sf::IntRect(uvRect.left*uvRect.width, 0, 168, 356));
 
 		
 	}

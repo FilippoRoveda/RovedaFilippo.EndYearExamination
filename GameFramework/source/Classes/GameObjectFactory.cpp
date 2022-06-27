@@ -10,8 +10,8 @@
 		product->Add_Component(c);
 		product->rectTransform->SetScale(1, 1);
 		product->rectTransform->SetPosition(position.x, position.y);
-		product->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,122 });
-		product->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 61 });
+		product->rectTransform->GetTransform()->setSize(sf::Vector2f{ 200,160 });
+		product->rectTransform->GetTransform()->setOrigin(sf::Vector2f{ 100, 80 });
 
 		return product;
 	}
@@ -21,7 +21,7 @@
 		auto product = new Sprite();
 		product->renderer->SetTexturePath("source/resources/roma.jpg", true, true);
 		product->rectTransform->SetScale(1920, 1080);
-		auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 60, true);
+		auto soundTrack = new MusicComponent("source/resources/music1.wav", true, 10, true);
 		product->rectTransform->SetPosition(position.x, position.y);
 		product->Add_Component(soundTrack);
 
@@ -74,14 +74,12 @@
 		return product;
 	}
 
-	GameObject* FirstLevelFactory::Seeker()
+	GameObject* FirstLevelFactory::Seeker(sf::Vector2f position)
 	{
 		auto product = new Agent(context);
-		Collider* coll = new Collider(product->rectTransform, 1.0f);
-		product->Add_Component(coll);
 		product->renderer->SetTexturePath("source/resources/ghost.jpg", true, true);
-		product->rectTransform->SetScale(256, 256);
-		product->rectTransform->SetPosition(500, 0);
-
+		product->rectTransform->GetTransform()->setTextureRect(sf::IntRect(50, 50, 800, 800));
+		product->rectTransform->SetScale(200, 200);
+		product->rectTransform->SetPosition(position.x, position.y);
 		return product;
 	}
