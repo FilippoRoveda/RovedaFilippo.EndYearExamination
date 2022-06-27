@@ -20,7 +20,7 @@ sf::Vector2f MovementComponent::GetVelocity()
 	return velocity;
 }
 
-sf::Vector2f MovementComponent::GetMotionVector() 
+sf::Vector2f MovementComponent::GetMotionVersor() 
 {
 	velocity = GetVelocity();
 	const float length = sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
@@ -35,7 +35,7 @@ void MovementComponent::On_Update(const float delta_time)
 	if (!IsMotionValid()) return;
 	auto nextPos = sf::Vector2f{ 0,0 };
 
-	if ((GetMotionVector().x == -1 && isJumping == false))
+	if ((GetMotionVersor().x == -1 && isJumping == false))
 	{
 
 		if (orientation != -1 || (orientation == -1 && wasJumping==true))
@@ -47,7 +47,7 @@ void MovementComponent::On_Update(const float delta_time)
 		}
 
 	}
-	else if(GetMotionVector().x == 1 && isJumping == false)
+	else if(GetMotionVersor().x == 1 && isJumping == false)
 	{
 		if (orientation != 1 || (orientation == 1 && wasJumping == true))
 		{
@@ -61,14 +61,14 @@ void MovementComponent::On_Update(const float delta_time)
 
 	if (isJumping == true)
 	{
-		if (GetMotionVector().x == -1 && isJumping == true)
+		if (GetMotionVersor().x == -1 && isJumping == true)
 		{
 				orientation = -1;
 				rederer->SetTexturePath("source/resources/backJump.png", true, true);
 				transform->GetTransform()->setTextureRect(sf::IntRect(0, 0, 168, 356));
 			
 		}
-		else if ((GetMotionVector().x == 1 || (GetMotionVector().x == 0 && orientation == 1)) && isJumping == true)
+		else if ((GetMotionVersor().x == 1 || (GetMotionVersor().x == 0 && orientation == 1)) && isJumping == true)
 		{	
 				orientation = 1;
 				rederer->SetTexturePath("source/resources/Jump.png", true, true);
@@ -77,8 +77,8 @@ void MovementComponent::On_Update(const float delta_time)
 	}
 
 
-	nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVector().x * 600 * delta_time, 
-											 GetMotionVector().y * speed * delta_time - currentJumpForce * delta_time);
+	nextPos = transform->GetTransform()->getPosition() + sf::Vector2f(GetMotionVersor().x * 600 * delta_time, 
+											 GetMotionVersor().y * speed * delta_time - currentJumpForce * delta_time);
 	//printf("new pos: %f, %f\n", nextPos.x, nextPos.y);
 
 	//Gravity like negative Yaxis acceleration implementation

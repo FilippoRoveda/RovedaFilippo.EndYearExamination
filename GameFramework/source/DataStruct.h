@@ -1,4 +1,5 @@
 #pragma once
+
 struct StaticData {
 	sf::Vector2f position = { 0, 0 };
 	float orientation = 0;

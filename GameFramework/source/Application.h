@@ -130,13 +130,18 @@ public:
 	}
 
 
-
-
-
+	/// <summary>
+	/// Add a CameraComponent to cameraInScene array that stores all view camera actually in scene.
+	/// </summary>
+	/// <returns></returns>
 	public:
 		void AddCameraInScene(CameraComponent* camera);
 
-
+	/// <summary>
+	/// Set the current View of the _Window member of apllication based on priority.
+	/// priority is a member of CameraComponent class.
+	/// </summary>
+	/// <returns></returns>
 	private:
 		void SetSceneCamera();
 
@@ -149,6 +154,9 @@ public:
 //GameLoop functions
 private:
 
+	/// <summary>
+	/// Update currentTime, calculate elapsedTime, add lag and setLastTime as the last currentTime.
+	/// </summary>
 	void UpdateGameTime();
 
 	/// <summary>
@@ -157,21 +165,47 @@ private:
 	/// <returns>total frames</returns>
 	unsigned GetFrameRate()const;
 
+
+	/// <summary>
+	/// Process all window events using sf::Event SFML class.
+	/// </summary>
+	/// <returns>total frames</returns>
 	void ProcessWindowEvents();
 
+
+	/// <summary>
+	/// Resize the window view based on actual size of the window.
+	/// </summary>
+	/// <returns>total frames</returns>
 	void ResizeView();
+
+
 
 	void FixedUpdate();
 
 	void Update();
 
+
+	/// <summary>
+	/// Render all transform in RectTranform components of all GameObjects in allEntities.
+	/// </summary>
+	/// <returns>total frames</returns>
 	void Draw();
 
 	void Initialize();
 
 
+	/// <summary>
+	/// Check collision event between every GameObject thas has a collider.
+	/// </summary>
+	/// <returns>total frames</returns>
 	void CheckCollision();
 
+
+	/// <summary>
+	/// Play music sound piece from all MusicComponents and MusicObjects.
+	/// </summary>
+	/// <returns>total frames</returns>
 	void PlayMusicsInScene();
 
 

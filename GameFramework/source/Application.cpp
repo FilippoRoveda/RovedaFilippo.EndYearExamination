@@ -7,7 +7,9 @@
 #include "SFML/Graphics.hpp"
 
 
-
+/// <summary>
+/// Default constructor, set _Window to nullptr, fpsLimitEnabled = false and maxFPS to 0.
+/// </summary>
 Application::Application()
 {
 	_Window = nullptr;
@@ -16,6 +18,9 @@ Application::Application()
 	backgroundcolor = sf::Color::Black;
 }
 
+/// <summary>
+/// Default destructor.
+/// </summary>
 Application::~Application()
 {
 	delete this;
@@ -109,6 +114,11 @@ void Application::SetSceneCamera()
 ////
 ////	GameLoop functions
 ////
+
+
+	/// <summary>
+	/// Update currentTime, calculate elapsedTime, add lag and setLastTime as the last currentTime.
+	/// </summary>
 void Application::UpdateGameTime()
 {
 	currentTime = tm.getCurrentTime();
@@ -123,6 +133,11 @@ void Application::UpdateGameTime()
 /// <returns>total frames</returns>
 unsigned Application::GetFrameRate()const { return 1 / elapsedTime; }
 
+
+/// <summary>
+/// Process all window events using sf::Event SFML class.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::ProcessWindowEvents()
 {
 	sf::Event evt{};
@@ -139,6 +154,11 @@ void Application::ProcessWindowEvents()
 	}
 }
 
+
+/// <summary>
+/// Resize the window view based on actual size of the window.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::ResizeView()
 {
 	float aspectRatio = float(_Window->getSize().x) / float(_Window->getSize().y);
@@ -163,7 +183,10 @@ void Application::Update()
 	}
 }
 
-
+/// <summary>
+/// Render all transform in RectTranform components of all GameObjects in allEntities.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::Draw()
 {
 	_Window->clear(backgroundcolor);
@@ -218,6 +241,10 @@ void Application::Initialize()
 
 }
 
+
+/// <summary>
+/// Executes application lifecycle.
+/// </summary>
 void Application::Run()
 {
 	Initialize();
@@ -248,6 +275,11 @@ void Application::Run()
 	}
 }
 
+
+/// <summary>
+/// Check collision event between every GameObject thas has a collider.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::CheckCollision() {
 
 	std::vector<Collider*> colliders;
@@ -271,6 +303,11 @@ void Application::CheckCollision() {
 	}
 }
 
+
+/// <summary>
+/// Play music sound piece from all MusicComponents and MusicObjects.
+/// </summary>
+/// <returns>total frames</returns>
 void Application::PlayMusicsInScene()
 {
 	std::vector<MusicComponent*> musics;

@@ -51,5 +51,10 @@ public:
  */
 	[[nodiscard]] sf::RectangleShape* GetTransform()const;
 
+
+	/**
+* \brief Get the position data.
+* \return current position.
+*/
 	sf::Vector2f GetPosition() { return position; }
 };
