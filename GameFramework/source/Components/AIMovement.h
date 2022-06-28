@@ -55,7 +55,7 @@ public:
 	*/
 	void GetTarget();
 
-
+protected:
 	/**
 	* \brief Update handled entity position reciving data from SeekSteeringAlgorythm.
 	* \return void

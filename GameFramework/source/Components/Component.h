@@ -36,7 +36,7 @@ public:
 	/// <summary>
 	/// Return the GameObject that owns this component.
 	/// </summary>
-	[[nodiscard]] GameObject* Get_Owner() const { return owner; }
+	[[nodiscard]] GameObject* GetOwner() { return owner; }
 
 
 	/// <summary>

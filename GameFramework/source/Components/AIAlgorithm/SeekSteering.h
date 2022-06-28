@@ -9,6 +9,19 @@
 * \ once target is reached.
 */
 class SeekSteeringAlgorythm {
+
+
+protected:
+	//Moved entity static data structure.
+	StaticData _character;
+	//Target entity static data structure.
+	StaticData _target;
+
+public:
+	float maxSpeed;
+	float radius;
+
+
 public:
 	/**
 	* \ Default constructor.
@@ -52,15 +65,6 @@ public:
 */
 	sf::Vector2f Normalize(sf::Vector2f vect);
 
-protected:
-	//Moved entity static data structure.
-	StaticData _character;
-	//Target entity static data structure.
-	StaticData _target;
-
-public:
-	float maxSpeed;
-	float radius;
 };
 
 

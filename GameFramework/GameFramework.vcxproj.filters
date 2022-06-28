@@ -107,9 +107,6 @@
     <ClInclude Include="source\Classes\GameObject.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="source\Classes\IDrawable.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
     <ClInclude Include="source\Classes\Itickable.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>

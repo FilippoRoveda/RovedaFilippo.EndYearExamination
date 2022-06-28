@@ -10,7 +10,7 @@ TimeManager::~TimeManager() {}
 /// Return currentTime.
 /// </summary>
 /// <returns>current clock time</returns>
-sf::Time TimeManager::getCurrentTime()const
+sf::Time TimeManager::GetCurrentTime()const
 {
 	return clock.getElapsedTime();
 }
@@ -20,7 +20,7 @@ sf::Time TimeManager::getCurrentTime()const
 /// Calculate delta between two time value.
 /// </summary>
 /// <returns>delta time</returns>
-float TimeManager::calculateElapsedTime(const float currentTime, const float lastTime)
+float TimeManager::CalculateElapsedTime(const float currentTime, const float lastTime)
 {
 	return currentTime - lastTime;
 }

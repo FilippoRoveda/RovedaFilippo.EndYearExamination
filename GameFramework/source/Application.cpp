@@ -47,7 +47,7 @@ void Application::CreateWindow(unsigned int windowWidth, unsigned int windowHeig
 /// Return TRUE if application's window is still open.
 /// </summary>
 /// <returns> TRUE or FALSE</returns>
-bool Application::isRunning() const
+bool Application::IsRunning() const
 {
 	return _Window->isOpen();
 }
@@ -121,8 +121,8 @@ void Application::SetSceneCamera()
 	/// </summary>
 void Application::UpdateGameTime()
 {
-	currentTime = tm.getCurrentTime();
-	elapsedTime = TimeManager::calculateElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());
+	currentTime = tm.GetCurrentTime();
+	elapsedTime = TimeManager::CalculateElapsedTime(currentTime.asSeconds(), lastTime.asSeconds());
 	lag += elapsedTime;
 	lastTime = currentTime;
 }
@@ -250,7 +250,7 @@ void Application::Run()
 	Initialize();
 	PlayMusicsInScene();
 	SetSceneCamera();
-	lastTime = tm.getCurrentTime();
+	lastTime = tm.GetCurrentTime();
 	while (_Window->isOpen())
 	{
 		UpdateGameTime();

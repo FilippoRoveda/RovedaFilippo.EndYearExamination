@@ -23,7 +23,22 @@ void GameObject::Add_Component(Component* component)
 
 void GameObject::Remove_Component(Component* component)
 {
-	//Risolvere problema eliminazione componenti
+	for (auto item : components)
+	{
+		if (item == component)
+		{
+			std::vector<Component*> buffer;
+			for (auto item : components)
+			{
+				if (item != component)
+				{
+					buffer.push_back(item);
+				}
+			}
+			components = buffer;
+			delete component;
+		}
+	}
 }
 
 

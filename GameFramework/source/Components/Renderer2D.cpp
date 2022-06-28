@@ -20,7 +20,7 @@ Renderer2D::Renderer2D(std::string texture_path, bool smooth, bool repepat) : Co
 	_texture->setSmooth(smooth);
 	_texture->setRepeated(repepat);
 
-	const auto rect = Get_Owner()->Get_Component<RectTranform, RectTranform>();
+	const auto rect = GetOwner()->Get_Component<RectTranform, RectTranform>();
 
 	if (!rect)
 	{
@@ -48,7 +48,7 @@ void Renderer2D::SetTexturePath(std::string texture_path, bool smooth, bool repe
 	_texture->setSmooth(smooth);
 	_texture->setRepeated(repeat);
 
-	const auto owner = dynamic_cast<Area2D*>(this->Get_Owner());
+	const auto owner = dynamic_cast<Area2D*>(this->GetOwner());
 	if (!owner)
 	{
 		printf("Owner casting failed!\n");

@@ -26,5 +26,5 @@ public:
 	* Otherwise set this whit the given value of smoothness and repeat.
 	* \return axis vector
 	*/
-	void SetTexturePath(std::string texture_path, bool smooth, bool repepat);
+	void SetTexturePath(std::string texture_path, bool smooth, bool repeat);
 };

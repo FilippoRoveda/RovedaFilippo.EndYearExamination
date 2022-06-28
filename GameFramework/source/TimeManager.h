@@ -14,14 +14,14 @@ public:
 	/// Return currentTime.
 	/// </summary>
 	/// <returns>current clock time</returns>
-	sf::Time getCurrentTime()const;
+	sf::Time GetCurrentTime()const;
 
 
 	/// <summary>
 	/// Calculate delta between two time value.
 	/// </summary>
 	/// <returns>delta time</returns>
-	static float calculateElapsedTime(float currentTime, float lastTime);
+	static float CalculateElapsedTime(float currentTime, float lastTime);
 
 private:
 	sf::Clock clock;

@@ -49,7 +49,7 @@ public:
 	/// Get TRUE if the application should kill itself.
 	/// </summary>
 	/// <returns> TRUE or FALSE</returns>
-	bool isRunning()const;
+	bool IsRunning()const;
 
 	/// <summary>
 	// limit frame per seconds to a constant value (e.g. 60)
@@ -144,17 +144,11 @@ public:
 	/// priority is a member of CameraComponent class.
 	/// </summary>
 	/// <returns></returns>
-	private:
-		void SetSceneCamera();
-
-
-
-
-
+private:
+	void SetSceneCamera();
 
 
 //GameLoop functions
-private:
 
 	/// <summary>
 	/// Update currentTime, calculate elapsedTime, add lag and setLastTime as the last currentTime.
@@ -167,13 +161,11 @@ private:
 	/// <returns>total frames</returns>
 	unsigned GetFrameRate()const;
 
-
 	/// <summary>
 	/// Process all window events using sf::Event SFML class.
 	/// </summary>
 	/// <returns>total frames</returns>
 	void ProcessWindowEvents();
-
 
 	/// <summary>
 	/// Resize the window view based on actual size of the window.
@@ -181,12 +173,9 @@ private:
 	/// <returns>total frames</returns>
 	void ResizeView();
 
-
-
 	void FixedUpdate();
 
 	void Update();
-
 
 	/// <summary>
 	/// Render all transform in RectTranform components of all GameObjects in allEntities.
@@ -196,21 +185,15 @@ private:
 
 	void Initialize();
 
-
 	/// <summary>
 	/// Check collision event between every GameObject thas has a collider.
 	/// </summary>
 	/// <returns>total frames</returns>
 	void CheckCollision();
 
-
 	/// <summary>
 	/// Play music sound piece from all MusicComponents and MusicObjects.
 	/// </summary>
 	/// <returns>total frames</returns>
 	void PlayMusicsInScene();
-
-
-
-
 };

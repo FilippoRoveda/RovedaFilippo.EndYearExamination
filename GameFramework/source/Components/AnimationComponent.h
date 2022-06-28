@@ -9,21 +9,7 @@
 class AnimationComponent : public Component
 {
 public:
-	/**
-	* \brief Constructor. Select the handled RectTransform, give a initial imageCount and decide the switch delay time between texture changes.
-	* \return void
-	*/
-	AnimationComponent(RectTranform* texture, sf::Vector2u imgCount, float switchTime);
-	~AnimationComponent();
-
-public:
 	sf::IntRect uvRect;
-
-	/**
-	* \brief Swtich animation every defined switch time.
-	* \return void
-	*/
-	void On_Update(const float delta_time) override;
 
 
 private:
@@ -43,4 +29,22 @@ private:
 
 	//Member to record current texture handled
 	const sf::Texture* currentTexture;
+
+
+
+public:
+	/**
+	* \brief Constructor. Select the handled RectTransform, give a initial imageCount and decide the switch delay time between texture changes.
+	* \return void
+	*/
+	AnimationComponent(RectTranform* texture, sf::Vector2u imgCount, float switchTime);
+	~AnimationComponent();
+
+	/**
+* \brief Swtich animation every defined switch time.
+* \return void
+*/
+	void On_Update(const float delta_time) override;
+
+
 };

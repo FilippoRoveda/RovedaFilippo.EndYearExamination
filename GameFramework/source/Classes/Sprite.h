@@ -8,8 +8,9 @@
 	class Sprite : public Area2D
 	{
 	public:
+		Renderer2D* renderer;
+
+	public:
 		Sprite();
 		~Sprite() override;
-
-		Renderer2D* renderer;
 	};
