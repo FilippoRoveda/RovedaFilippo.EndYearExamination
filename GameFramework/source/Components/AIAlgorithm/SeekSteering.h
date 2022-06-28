@@ -5,7 +5,7 @@
 
 
 /**
-* \ SeekSteering Kinematic algorythm, implement a radial detection that stops tha handled RectTransform from moving
+* \brief SeekSteering Kinematic algorythm, implement a radial detection that stops tha handled RectTransform from moving
 * \ once target is reached.
 */
 class SeekSteeringAlgorythm {

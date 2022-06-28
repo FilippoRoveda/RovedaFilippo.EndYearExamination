@@ -1,12 +1,13 @@
 #pragma once
 #include "..\Components\Component.h"
-//#include "Components/MovementComponent.h"
 #include "..\include\SFML\Graphics.hpp"
+
+class MovementComponent;
+
 
 /**
 *  /brief Component that manage device inputs.
 */
-class MovementComponent;
 class Controller : public Component
 {
 	friend class Application;
