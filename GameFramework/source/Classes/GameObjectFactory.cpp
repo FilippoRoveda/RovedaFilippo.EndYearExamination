@@ -5,7 +5,7 @@
 	{
 		auto product = new Sprite();
 		product->renderer->SetTexturePath("source/resources/brick.jpg", true, true);
-		auto c = new Collider(product->rectTransform, 1.0f);
+		auto c = new Collider(product->rectTransform, 11.0f);
 		c->isMovable = false;
 		product->Add_Component(c);
 		product->rectTransform->SetScale(1, 1);

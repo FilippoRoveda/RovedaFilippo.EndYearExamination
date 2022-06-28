@@ -2,6 +2,12 @@
 #include "Component.h"
 #include "RectTransform.h"
 
+
+
+/**
+* \brief Collider component that detect and handle collision between another collider component.
+* Can be attached to every rect transform.
+*/
 class Collider : public Component
 {
 private:

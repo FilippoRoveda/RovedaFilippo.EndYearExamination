@@ -4,7 +4,7 @@
 #include "..\include\SFML\Graphics.hpp"
 
 /**
-*  /brief Component that manage device inputs
+*  /brief Component that manage device inputs.
 */
 class MovementComponent;
 class Controller : public Component
@@ -17,7 +17,7 @@ private:
 	bool rightwardMovement = true;
 	float XAxis = 0.0f, YAxis = 0.0f;
 
-	MovementComponent* movementComponent;
+	MovementComponent* movementComponent = nullptr;
 
 
 protected:
@@ -25,8 +25,20 @@ protected:
 	void On_Fixed_Update(const float delta_time) override;
 
 public:
+	/**
+	* \Default onstructor.
+	* \return void
+	*/
 	Controller();
+	/**
+	* \Constructor, set context.
+	* \return void
+	*/
 	Controller(MovementComponent* movementComponent );
+	/**
+	* \Destructor.
+	* \return void
+	*/
 	~Controller() override;
 
 

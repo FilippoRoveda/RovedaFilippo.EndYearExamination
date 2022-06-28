@@ -2,7 +2,7 @@
 
 AIMovement::AIMovement() : Component("AI Movement")
 {
-	seekStrAl = new SeekSteeringAlgorithm();
+	seekStrAl = new SeekSteeringAlgorythm();
 }
 
 void AIMovement::GetTarget()
@@ -45,10 +45,15 @@ void AIMovement::On_Update(const float delta_time)
 		position = myTransform->GetTransform()->getPosition();
 		myTransform->SetPosition(position.x + (velocity.x * delta_time), position.y + (velocity.y * delta_time));
 		SteeringData* results = seekStrAl->GetSteering();
-		if (results->reached) { velocity = { 0, 0 }; }
+
+		if (results->reached) { 
+			velocity = { 0, 0 }; 
+		}
+
 		else {
 			velocity = velocity + results->linear * delta_time;
 			myTransform->SetRotation(results->angular);
 		}
+		delete results;
 	}
 }

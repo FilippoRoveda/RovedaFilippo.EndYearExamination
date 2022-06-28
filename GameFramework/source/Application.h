@@ -5,7 +5,9 @@
 #include"Components/CameraComponent.h"
 
 
-
+/**
+ * \brief Application class, contain every entity in scene, handle windows and views and runs the core application loop.
+ */
 class Application
 {
 	friend class CameraComponent;
@@ -15,21 +17,21 @@ private:
 	TimeManager tm;
 
 	sf::Time lastTime, currentTime;
-	float elapsedTime;
-	float lag;
+	float elapsedTime = 0.0f;
+	float lag = 0.0f;
 
-	bool fixedUpdateEnabled;
-	float msForFixedUpdate;
+	bool fixedUpdateEnabled = false;
+	float msForFixedUpdate = 0.016f;
 
-	bool fpsLimitEnabled;
-	unsigned maxFPS;
+	bool fpsLimitEnabled = false;
+	unsigned maxFPS = 60;
 
 protected:
-	sf::RenderWindow* _Window;
+	sf::RenderWindow* _Window = nullptr;
 public:
 	std::vector<GameObject*> allEntities;
 	std::vector<CameraComponent*> allCameraInScene;
-	CameraComponent* currentCamera;
+	CameraComponent* currentCamera = nullptr;
 
 public:
 	Application();
@@ -41,7 +43,7 @@ public:
 	/// <param name="windowWidth">the window width</param>
 	/// <param name="windowHeight">the window height</param>
 	/// <param name="windowTitle">window main title</param>
-	void CreateWindow(float windowWidth, float windowHeight, const char* windowTitle);
+	void CreateWindow(unsigned int windowWidth, unsigned int windowHeight, const char* windowTitle);
 
 	/// <summary>
 	/// Get TRUE if the application should kill itself.
@@ -89,7 +91,7 @@ public:
 	/// <summary>
 	/// Set the background color from 3 RGB float value and a float alpha value
 	/// </summary>
-	void SetBackgroundColor(float red, float green, float blue, float alpha);
+	void SetBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha);
 
 
 

@@ -5,6 +5,10 @@
 
 class GameObject;
 
+
+/**
+ * \brief Base Component class.
+ */
 class Component : public Object, public ITickable
 {
 	friend class GameObject;

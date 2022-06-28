@@ -1,16 +1,16 @@
 #include "SeekSteering.h"
 
-SeekSteeringAlgorithm::SeekSteeringAlgorithm()
+SeekSteeringAlgorythm::SeekSteeringAlgorythm()
 {
 	maxSpeed = 0;
 	radius = 0;
 }
 
-SeekSteeringAlgorithm::~SeekSteeringAlgorithm()
+SeekSteeringAlgorythm::~SeekSteeringAlgorythm()
 {
 }
 
-void SeekSteeringAlgorithm::Construct(RectTranform* agent, Character* target, float maxSpeed, float radius)
+void SeekSteeringAlgorythm::Construct(RectTranform* agent, Character* target, float maxSpeed, float radius)
 {
 	_character.position = agent->GetTransform()->getPosition();
 	_character.orientation = agent->GetTransform()->getRotation();
@@ -20,7 +20,7 @@ void SeekSteeringAlgorithm::Construct(RectTranform* agent, Character* target, fl
 	this->radius = radius;
 }
 
-SteeringData* SeekSteeringAlgorithm::GetSteering()
+SteeringData* SeekSteeringAlgorythm::GetSteering()
 {
 	if (Vector2Lenght(_target.position - _character.position) < radius)
 	{
@@ -37,7 +37,7 @@ SteeringData* SeekSteeringAlgorithm::GetSteering()
 	}
 }
 
-float SeekSteeringAlgorithm::CalculateNewOrientation( sf::Vector2f velocity)
+float SeekSteeringAlgorythm::CalculateNewOrientation( sf::Vector2f velocity)
 {
 	if (Vector2Lenght(velocity) > 0)
 	{
@@ -50,12 +50,12 @@ float SeekSteeringAlgorithm::CalculateNewOrientation( sf::Vector2f velocity)
 	}
 }
 
-float SeekSteeringAlgorithm::Vector2Lenght(sf::Vector2f vect)
+float SeekSteeringAlgorythm::Vector2Lenght(sf::Vector2f vect)
 {
 	return std::sqrt(vect.x * vect.x + vect.y * vect.y);
 }
 
-sf::Vector2f SeekSteeringAlgorithm::Normalize(sf::Vector2f vect)
+sf::Vector2f SeekSteeringAlgorythm::Normalize(sf::Vector2f vect)
 {
 	float len = std::sqrt(vect.x * vect.x + vect.y * vect.y);
 	if (len != 0) {

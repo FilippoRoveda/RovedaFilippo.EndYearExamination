@@ -1,5 +1,9 @@
 #pragma once
 #include "SFML/System.hpp"
+
+/**
+ * \brief Utilitie struct to handle time.
+ */
 struct TimeManager
 {
 public:

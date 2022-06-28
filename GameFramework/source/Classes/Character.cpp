@@ -10,6 +10,7 @@ Character::Character() : Sprite()
 	movementComponent->speed = 100;
 	movementComponent->SetOwner(this);
 	collider = new Collider(rectTransform, 1.0f);
+	//collider->isMovable = false;
 	movementComponent->SetCollider(collider);
 
 	Add_Component(collider);

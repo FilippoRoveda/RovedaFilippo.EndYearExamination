@@ -3,6 +3,10 @@
 #include "SFML/Audio.hpp"
 #include <iostream>
 
+
+/**
+ * \brief Component that set and handle music track attached to a GameObject.
+ */
 class MusicComponent : public Component
 {
 	friend class Application;

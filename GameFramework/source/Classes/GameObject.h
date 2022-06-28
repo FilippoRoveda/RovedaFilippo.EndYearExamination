@@ -6,6 +6,10 @@
 
 class Component;
 
+/**
+* \brief GameObject class represent a tickable object that can contain Components that define its behaviour
+*  and its property.
+*/
 class GameObject : public Object, public ITickable
 {
 	friend class Application;

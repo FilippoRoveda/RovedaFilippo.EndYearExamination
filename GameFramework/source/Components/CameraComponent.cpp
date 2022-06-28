@@ -18,11 +18,6 @@ CameraComponent::CameraComponent(sf::Vector2f center, sf::Vector2f size, Applica
 }
 
 
-CameraComponent::~CameraComponent()
-{
-	//context->SetNextCamera(priority);
-}
-
 void CameraComponent::SetView()
 {
 	sf::View& cam = *(cameraView);
@@ -35,12 +30,15 @@ void CameraComponent::SetView()
 void CameraComponent::On_Update(const float delta_time)
 {
 	sf::View& cam = *(cameraView);
-	if (abs(myChar->rectTransform->GetTransform()->getPosition().x - xpos) >= 5.0f)
+	if (abs(myChar->rectTransform->GetTransform()->getPosition().x - xpos) >= minDeltaXPos)
 	{
 		xpos = myChar->rectTransform->GetTransform()->getPosition().x;
 	}
+
 	ypos = myChar->rectTransform->GetTransform()->getPosition().y;
-	if (ypos < 300) { ypos = 300; }
+
+	if (ypos < maxHeight) { ypos = maxHeight; }
+
 	cameraView->setCenter(xpos,ypos);
 	context->_Window->setView(cam);
 }

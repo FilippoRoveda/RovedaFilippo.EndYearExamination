@@ -12,30 +12,54 @@
 class AIMovement : public Component
 {
 	friend class Application;
+
 public:
 	Application* context = nullptr;
-	RectTranform* myTransform;
-	SeekSteeringAlgorithm* seekStrAl;
-	Character* target;
+
+	//Ref to moved entity.
+	RectTranform* myTransform = nullptr;
+	//Current implemented algorythm.
+	SeekSteeringAlgorythm* seekStrAl = nullptr;
+	//Target to seek.
+	Character* target = nullptr;
 
 private:
+	//Bool that indicate if there is a Character to seek in scene.
 	bool hasTarget = false;
 
 protected:
 	float maxSpeed = 100;
 	float radius = 200;
 	sf::Vector2f position;
-	float orientation;
+	float orientation = 0.0f;
 	sf::Vector2f velocity = {0, 0};
-	float rotation;
+	float rotation = 0.0f;
 
 
 public:
+	/**
+	* \brief Constructor, initialize seekStrAl.
+	* \return void
+	*/
 	AIMovement();
+	/**
+	* \brief Destructor.
+	* \return void
+	*/
 	~AIMovement() override;
 
+
+	/**
+	* \brief Detect character in scene and pass his information to the SeekAlgorythm to update all references.
+	* \return void
+	*/
 	void GetTarget();
 
+
+	/**
+	* \brief Update handled entity position reciving data from SeekSteeringAlgorythm.
+	* \return void
+	*/
 	void On_Update(const float delta_time) override;
 
 };

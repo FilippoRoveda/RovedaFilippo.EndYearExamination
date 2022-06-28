@@ -1,6 +1,11 @@
 #pragma once
 #include "Classes/Object.h"
 
+
+/**
+* \brief THIS CLASS IS NOT IMPLEMENTED IN THIS FRAMEWORK VERSION.
+*Will be a class that decouple rendering phases from RectTransform class.
+*/
 class IDrawable
 {
 	friend class Application;

@@ -2,6 +2,11 @@
 #include "GameObject.h"
 #include "SFML/Audio.hpp"
 
+
+/**
+* \brief CLASS NOT IMPLEMENTED IN THIS FRAMEWORK VERSION.
+*  Will generate a stand alone object that contain a playable music track.
+*/
 class MusicObject : public GameObject
 {
 	friend class Application;
@@ -22,9 +27,12 @@ public:
 		music->setVolume(volume);
 		this->playOnStart = playOnStart;
 	}
+
+
 	~MusicObject() { delete music; }
 
 	sf::SoundSource::Status GetStatus() { return music->getStatus(); }
+
 	void Stop() { music->stop(); }
 	void Play() { music->play(); }
 

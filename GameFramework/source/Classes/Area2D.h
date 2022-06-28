@@ -2,6 +2,9 @@
 #include "GameObject.h"
 #include "..\Components\RectTransform.h"
 
+/**
+* \brief GameObject that contain by default a RectTranform component.
+*/
 class Area2D : public GameObject
 {
 public:

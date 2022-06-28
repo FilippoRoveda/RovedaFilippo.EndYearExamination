@@ -34,7 +34,7 @@ Application::~Application()
 /// <param name="windowWidth">the window width</param>
 /// <param name="windowHeight">the window height</param>
 /// <param name="windowTitle">window main title</param>
-void Application::CreateWindow(float windowWidth, float windowHeight, const char* windowTitle)
+void Application::CreateWindow(unsigned int windowWidth, unsigned int windowHeight, const char* windowTitle)
 {
 	_Window = new sf::RenderWindow(sf::VideoMode(windowWidth, windowHeight), windowTitle);
 	if (!_Window)
@@ -65,7 +65,7 @@ void Application::SetBackgroundColor(sf::Color color)
 /// Set background coloro using 4 float value for color component: red, green, blue, alpha.
 /// </summary>
 /// <returns></returns>
-void Application::SetBackgroundColor(float red, float green, float blue, float alpha)
+void Application::SetBackgroundColor(sf::Uint8 red, sf::Uint8 green, sf::Uint8 blue, sf::Uint8 alpha)
 {
 	backgroundcolor = sf::Color(red, green, blue, alpha);
 }
@@ -92,7 +92,7 @@ void Application::SetSceneCamera()
 {
 	int counter = 0;
 	bool completed = false;
-	CameraComponent* cam;
+	CameraComponent* cam = nullptr;
 	while (completed == true)
 	{
 		for (auto item : allCameraInScene)
@@ -131,7 +131,7 @@ void Application::UpdateGameTime()
 /// Calculate the total frames in one seconds by elapsed time
 /// </summary>
 /// <returns>total frames</returns>
-unsigned Application::GetFrameRate()const { return 1 / elapsedTime; }
+unsigned Application::GetFrameRate()const { return unsigned(1 / elapsedTime); }
 
 
 /// <summary>
@@ -233,8 +233,8 @@ void Application::Initialize()
 	AddEntity(factory->NormalBlock(sf::Vector2f(400, 700)));
 	AddEntity(factory->NormalBlock(sf::Vector2f(800, 700)));
 	AddEntity(factory->NormalBlock(sf::Vector2f(1200, 700)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(1600, 400)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(2200, 400)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(1600, 500)));
+	AddEntity(factory->NormalBlock(sf::Vector2f(2200,400)));
 
 	AddEntity(factory->MainCharacter(sf::Vector2f(200, 600)));
 	AddEntity(factory->Seeker(sf::Vector2f(-200, 200)));
