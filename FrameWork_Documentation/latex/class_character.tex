@@ -1,0 +1,83 @@
+\hypertarget{class_character}{}\doxysection{Character Class Reference}
+\label{class_character}\index{Character@{Character}}
+
+
+\mbox{\hyperlink{class_sprite}{Sprite}} gameobject that contain by default a \mbox{\hyperlink{class_controller}{Controller}} component to receive inputs, a \mbox{\hyperlink{class_movement_component}{Movement\+Component}} to handle those inputs and move the \mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} that already own and a collider to detect scene collision.  
+
+
+
+
+{\ttfamily \#include $<$Character.\+h$>$}
+
+Inheritance diagram for Character\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_character}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_character_ad1ebefdf6829a3df1576f839ce3053c7}\label{class_character_ad1ebefdf6829a3df1576f839ce3053c7}} 
+\mbox{\hyperlink{class_controller}{Controller}} $\ast$ {\bfseries controller}
+\item 
+\mbox{\Hypertarget{class_character_a33b7492692381fec37e6166606aa3c3a}\label{class_character_a33b7492692381fec37e6166606aa3c3a}} 
+\mbox{\hyperlink{class_movement_component}{Movement\+Component}} $\ast$ {\bfseries movement\+Component}
+\item 
+\mbox{\Hypertarget{class_character_adff00cfb77bffacc47f7749a0e4193dd}\label{class_character_adff00cfb77bffacc47f7749a0e4193dd}} 
+\mbox{\hyperlink{class_collider}{Collider}} $\ast$ {\bfseries collider}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_character_a783aee14bd7f8007616a94c14be2923d}{On\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Default On\+\_\+\+Update method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_character_a2aeac90ed2df145623c610f48360a091}{On\+\_\+\+Fixed\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Default On\+\_\+\+Fixed\+\_\+\+Update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_character_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_character_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_sprite}{Sprite}} gameobject that contain by default a \mbox{\hyperlink{class_controller}{Controller}} component to receive inputs, a \mbox{\hyperlink{class_movement_component}{Movement\+Component}} to handle those inputs and move the \mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} that already own and a collider to detect scene collision. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_character_a2aeac90ed2df145623c610f48360a091}\label{class_character_a2aeac90ed2df145623c610f48360a091}} 
+\index{Character@{Character}!On\_Fixed\_Update@{On\_Fixed\_Update}}
+\index{On\_Fixed\_Update@{On\_Fixed\_Update}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{On\_Fixed\_Update()}{On\_Fixed\_Update()}}
+{\footnotesize\ttfamily void Character\+::\+On\+\_\+\+Fixed\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default On\+\_\+\+Fixed\+\_\+\+Update method. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_game_object_af85fcf1166ebf5ee9a7c19d80ff67c93}{Game\+Object}}.
+
+\mbox{\Hypertarget{class_character_a783aee14bd7f8007616a94c14be2923d}\label{class_character_a783aee14bd7f8007616a94c14be2923d}} 
+\index{Character@{Character}!On\_Update@{On\_Update}}
+\index{On\_Update@{On\_Update}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{On\_Update()}{On\_Update()}}
+{\footnotesize\ttfamily void Character\+::\+On\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default On\+\_\+\+Update method. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_game_object_afe7528c47d3886846ff47b592dc74975}{Game\+Object}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Classes/Character.\+h\item 
+Game\+Framework/source/\+Classes/Character.\+cpp\end{DoxyCompactItemize}

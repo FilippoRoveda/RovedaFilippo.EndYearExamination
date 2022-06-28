@@ -1,0 +1,54 @@
+\hypertarget{_game_object_factory_8h_source}{}\doxysection{Game\+Object\+Factory.\+h}
+\label{_game_object_factory_8h_source}\index{GameFramework/source/Classes/GameObjectFactory.h@{GameFramework/source/Classes/GameObjectFactory.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Components/Collider.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}Components/MusicComponent.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Classes/Character.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Classes/MusicObject.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Sprite.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Components/AnimationComponent.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Classes/Agent.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_objects_factory}{GameObjectsFactory}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{19     \textcolor{comment}{//Pointer to store created object}}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_game_object}{GameObject}}* product = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_application}{Application}}* context = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_game_objects_factory_a716c35c95d8c96549549bbd9d70e7668}{GameObjectsFactory}}() \{\};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32     \mbox{\hyperlink{class_game_objects_factory_a888ef38cb5cb74d1a890b42f0fb6c6ca}{GameObjectsFactory}}(\mbox{\hyperlink{class_application}{Application}}* context) \{ this-\/>context = context; \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37     \mbox{\hyperlink{class_game_objects_factory_a969e6baadc582287b1b81521a405ca40}{\string~GameObjectsFactory}}() \{\};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{GameObject}}* NormalBlock(sf::Vector2f position) = 0;}
+\DoxyCodeLine{40     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{GameObject}}* BackGround(sf::Vector2f position) = 0;}
+\DoxyCodeLine{41     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{GameObject}}* GroundLayer() = 0;}
+\DoxyCodeLine{42     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{GameObject}}* MainCharacter(sf::Vector2f position) = 0;}
+\DoxyCodeLine{43     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{GameObject}}* Seeker(sf::Vector2f position) = 0;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_first_level_factory}{FirstLevelFactory}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_game_objects_factory}{GameObjectsFactory}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{58     \mbox{\hyperlink{class_first_level_factory_aa3f8ccb03869e496cf3a67de0bbc247f}{FirstLevelFactory}}(\mbox{\hyperlink{class_application}{Application}}* context) \{ this-\/>context = context; \};}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_first_level_factory_a486bcf3d501fdb8d80a7fe8b72ff01bc}{\string~FirstLevelFactory}}() \{\};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 }
+\DoxyCodeLine{68      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_a91902db585192a57a164e9d7e3965de1}{NormalBlock}}(sf::Vector2f position) \textcolor{keyword}{override};}
+\DoxyCodeLine{72      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_ad24c895632902225fa4e50a6f1e1d026}{BackGround}}(sf::Vector2f position) \textcolor{keyword}{override};}
+\DoxyCodeLine{76      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_a15c2999e90182f4ab729ce293d769f9a}{BackGroundandMusic}}(sf::Vector2f position);}
+\DoxyCodeLine{80      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_a4a40f2648c4bdfe9543d4c0887fbc3b2}{GroundLayer}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{84      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_af0acebcc05653cc35ded59920c4ade27}{MainCharacter}}(sf::Vector2f position) \textcolor{keyword}{override};}
+\DoxyCodeLine{88      \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_first_level_factory_a9e3aa9ea0683127f9912b4cef98e7c4a}{Seeker}}(sf::Vector2f position) \textcolor{keyword}{override};}
+\DoxyCodeLine{89 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,139 @@
+\hypertarget{class_controller}{}\doxysection{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+\mbox{\hyperlink{class_component}{Component}} that manage device inputs.  
+
+
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+Inheritance diagram for Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_controller}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controller_a95c56822d667e94b031451729ce069a9}{Controller}} ()
+\item 
+\mbox{\hyperlink{class_controller_a9c21b2b4bea4ad90f8f9e4e6e8375ae4}{Controller}} (\mbox{\hyperlink{class_movement_component}{Movement\+Component}} $\ast$movement\+Component)
+\item 
+\mbox{\hyperlink{class_controller_a8351d2a68600034af0dbd1834bb21374}{$\sim$\+Controller}} () override
+\item 
+void \mbox{\hyperlink{class_controller_ade2932444df8648e5c2c4ba0877f2a3c}{Set\+Movement\+Component}} (\mbox{\hyperlink{class_movement_component}{Movement\+Component}} $\ast$movement\+Component)
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_controller_a8733facc8f5deecc1abea684b95cd45b}{Get\+\_\+\+Axis\+\_\+\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em get all axis component as 2D vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_controller_aed533aa1c5f0277feee1bdd72bac0d3d}{On\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Default On\+\_\+\+Update method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a24b0fc855b718d9b77d8ab495d368a60}{On\+\_\+\+Fixed\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Default On\+\_\+\+Fixed\+\_\+\+Update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_controller_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_controller_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\item 
+\mbox{\Hypertarget{class_controller_af272d4d84279e41e104d3be69b8685e4}\label{class_controller_af272d4d84279e41e104d3be69b8685e4}} 
+class {\bfseries Movement\+Component}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_component}{Component}} that manage device inputs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_a95c56822d667e94b031451729ce069a9}\label{class_controller_a95c56822d667e94b031451729ce069a9}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\textbackslash{}\+Default onstructor. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_controller_a9c21b2b4bea4ad90f8f9e4e6e8375ae4}\label{class_controller_a9c21b2b4bea4ad90f8f9e4e6e8375ae4}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Controller()}{Controller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_movement_component}{Movement\+Component}} $\ast$}]{movement\+Component }\end{DoxyParamCaption})}
+
+\textbackslash{}\+Constructor, set context. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_controller_a8351d2a68600034af0dbd1834bb21374}\label{class_controller_a8351d2a68600034af0dbd1834bb21374}} 
+\index{Controller@{Controller}!````~Controller@{$\sim$Controller}}
+\index{````~Controller@{$\sim$Controller}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{$\sim$Controller()}{~Controller()}}
+{\footnotesize\ttfamily Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+\textbackslash{}\+Destructor. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_a8733facc8f5deecc1abea684b95cd45b}\label{class_controller_a8733facc8f5deecc1abea684b95cd45b}} 
+\index{Controller@{Controller}!Get\_Axis\_Vector@{Get\_Axis\_Vector}}
+\index{Get\_Axis\_Vector@{Get\_Axis\_Vector}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{Get\_Axis\_Vector()}{Get\_Axis\_Vector()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Controller\+::\+Get\+\_\+\+Axis\+\_\+\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get all axis component as 2D vector 
+
+\begin{DoxyReturn}{Returns}
+axis vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_controller_a24b0fc855b718d9b77d8ab495d368a60}\label{class_controller_a24b0fc855b718d9b77d8ab495d368a60}} 
+\index{Controller@{Controller}!On\_Fixed\_Update@{On\_Fixed\_Update}}
+\index{On\_Fixed\_Update@{On\_Fixed\_Update}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{On\_Fixed\_Update()}{On\_Fixed\_Update()}}
+{\footnotesize\ttfamily void Controller\+::\+On\+\_\+\+Fixed\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default On\+\_\+\+Fixed\+\_\+\+Update method. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a1eb11bd35ded7f01a316167d709db3cf}{Component}}.
+
+\mbox{\Hypertarget{class_controller_aed533aa1c5f0277feee1bdd72bac0d3d}\label{class_controller_aed533aa1c5f0277feee1bdd72bac0d3d}} 
+\index{Controller@{Controller}!On\_Update@{On\_Update}}
+\index{On\_Update@{On\_Update}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{On\_Update()}{On\_Update()}}
+{\footnotesize\ttfamily void Controller\+::\+On\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default On\+\_\+\+Update method. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a4fa2b6c5c32c6078a933a046d7ee1416}{Component}}.
+
+\mbox{\Hypertarget{class_controller_ade2932444df8648e5c2c4ba0877f2a3c}\label{class_controller_ade2932444df8648e5c2c4ba0877f2a3c}} 
+\index{Controller@{Controller}!SetMovementComponent@{SetMovementComponent}}
+\index{SetMovementComponent@{SetMovementComponent}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{SetMovementComponent()}{SetMovementComponent()}}
+{\footnotesize\ttfamily void Controller\+::\+Set\+Movement\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_movement_component}{Movement\+Component}} $\ast$}]{movement\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\textbackslash{}\+Set linked \mbox{\hyperlink{class_movement_component}{Movement\+Component}} \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/Controller.\+h\item 
+Game\+Framework/source/\+Components/Controller.\+cpp\end{DoxyCompactItemize}

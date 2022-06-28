@@ -1,0 +1,127 @@
+\hypertarget{class_rect_tranform}{}\doxysection{Rect\+Tranform Class Reference}
+\label{class_rect_tranform}\index{RectTranform@{RectTranform}}
+
+
+\mbox{\hyperlink{class_component}{Component}} that allows to represent portion of space in viewport.  
+
+
+
+
+{\ttfamily \#include $<$Rect\+Transform.\+h$>$}
+
+Inheritance diagram for Rect\+Tranform\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_rect_tranform}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rect_tranform_af4496b1350d926ed9ee5f362acb102b9}\label{class_rect_tranform_af4496b1350d926ed9ee5f362acb102b9}} 
+{\bfseries Rect\+Tranform} (sf\+::\+Vector2f position, float rotation, sf\+::\+Vector2f scale)
+\item 
+void \mbox{\hyperlink{class_rect_tranform_ad9e82d870ae966da5feca3ae8d2e7b96}{Set\+Position}} (float x, float y) const
+\begin{DoxyCompactList}\small\item\em Set area position in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rect_tranform_a0e4fd8919653198c620e09a8d2b6807e}{Set\+Rotation}} (float angle) const
+\begin{DoxyCompactList}\small\item\em Set area rotation in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_rect_tranform_a88ed8f808090bf1a9d105e057f7c5724}{Set\+Scale}} (float x, float y) const
+\begin{DoxyCompactList}\small\item\em Set size in pixel for this area in world space. \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape $\ast$ \mbox{\hyperlink{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}{Get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the transform data. \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_rect_tranform_a95e60664fe1c4d345b5ff6838ef79f2d}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get the position data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_rect_tranform_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_rect_tranform_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_component}{Component}} that allows to represent portion of space in viewport. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rect_tranform_a95e60664fe1c4d345b5ff6838ef79f2d}\label{class_rect_tranform_a95e60664fe1c4d345b5ff6838ef79f2d}} 
+\index{RectTranform@{RectTranform}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!RectTranform@{RectTranform}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Rect\+Tranform\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the position data. 
+
+\begin{DoxyReturn}{Returns}
+current position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}\label{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}} 
+\index{RectTranform@{RectTranform}!GetTransform@{GetTransform}}
+\index{GetTransform@{GetTransform}!RectTranform@{RectTranform}}
+\doxysubsubsection{\texorpdfstring{GetTransform()}{GetTransform()}}
+{\footnotesize\ttfamily sf\+::\+Rectangle\+Shape $\ast$ Rect\+Tranform\+::\+Get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the transform data. 
+
+\begin{DoxyReturn}{Returns}
+Area transform. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_rect_tranform_ad9e82d870ae966da5feca3ae8d2e7b96}\label{class_rect_tranform_ad9e82d870ae966da5feca3ae8d2e7b96}} 
+\index{RectTranform@{RectTranform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!RectTranform@{RectTranform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Rect\+Tranform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Set area position in world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: horizontal position. \\
+\hline
+{\em y} & \+: vertical position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rect_tranform_a0e4fd8919653198c620e09a8d2b6807e}\label{class_rect_tranform_a0e4fd8919653198c620e09a8d2b6807e}} 
+\index{RectTranform@{RectTranform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!RectTranform@{RectTranform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily void Rect\+Tranform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption}) const}
+
+
+
+Set area rotation in world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & \+: the rotation angle in degrees. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_rect_tranform_a88ed8f808090bf1a9d105e057f7c5724}\label{class_rect_tranform_a88ed8f808090bf1a9d105e057f7c5724}} 
+\index{RectTranform@{RectTranform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!RectTranform@{RectTranform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void Rect\+Tranform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Set size in pixel for this area in world space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \+: number of pixel on X. \\
+\hline
+{\em y} & \+: number of pixel on Y. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/Rect\+Transform.\+h\item 
+Game\+Framework/source/\+Components/Rect\+Transform.\+cpp\end{DoxyCompactItemize}

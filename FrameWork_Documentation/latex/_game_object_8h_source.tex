@@ -1,0 +1,69 @@
+\hypertarget{_game_object_8h_source}{}\doxysection{Game\+Object.\+h}
+\label{_game_object_8h_source}\index{GameFramework/source/Classes/GameObject.h@{GameFramework/source/Classes/GameObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Object.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Itickable.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}};}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_object}{Object}}, \textcolor{keyword}{public} \mbox{\hyperlink{class_i_tickable}{ITickable}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     std::vector<Component*> components;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{21     \textcolor{comment}{//Inherited from ITickable}}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_afe7528c47d3886846ff47b592dc74975}{On\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{23     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_af85fcf1166ebf5ee9a7c19d80ff67c93}{On\_Fixed\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{public}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_game_object}{GameObject}}() \{\};}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} std::string name, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isActive = \textcolor{keyword}{true});}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_game_object}{GameObject}}(\textcolor{keyword}{const} std::string name, \textcolor{keyword}{const} std::vector<Component*> components, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isActive = \textcolor{keyword}{true});}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_game_object}{\string~GameObject}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36      \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_a3540468936e1e251981d7212d0476552}{Add\_Component}}(\mbox{\hyperlink{class_component}{Component}}* component);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{42      \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_object_a5236f388fb60b9e4a4ec1840d8a58f67}{Remove\_Component}}(\mbox{\hyperlink{class_component}{Component}}* component);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{49      \textcolor{keyword}{template}<\textcolor{keyword}{class} T, \textcolor{keyword}{class} = Component>  T* \mbox{\hyperlink{class_game_object_a9af83131e56ecbdbdb087c79c3003598}{Get\_Component}}() \{}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51          \textcolor{keywordflow}{if} (components.size() == 0) \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53          \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_component}{Component}}* item : components)}
+\DoxyCodeLine{54          \{}
+\DoxyCodeLine{55              \textcolor{keyword}{const} \textcolor{keyword}{auto} val = \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(item);}
+\DoxyCodeLine{56              \textcolor{keywordflow}{if} (!val) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58              \textcolor{keywordflow}{return} val;}
+\DoxyCodeLine{59          \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61          \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{62      \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{69      \textcolor{keyword}{template}<\textcolor{keyword}{class} T> std::vector<T*> \mbox{\hyperlink{class_game_object_a6d7881d3a184e79f8af2723c994b9882}{Get\_Components}}() }
+\DoxyCodeLine{70      \{}
+\DoxyCodeLine{71          std::vector<T*> result;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73          \textcolor{keywordflow}{if} (components.size() == 0) \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75          \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_component}{Component}} * component : components)}
+\DoxyCodeLine{76          \{}
+\DoxyCodeLine{77              \textcolor{keyword}{const} \textcolor{keyword}{auto} val = \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(component);}
+\DoxyCodeLine{78              \textcolor{keywordflow}{if} (!val) \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80              result.push\_back(val);}
+\DoxyCodeLine{81          \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83          \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{84      \}}
+\DoxyCodeLine{85 \};}
+
+\end{DoxyCode}

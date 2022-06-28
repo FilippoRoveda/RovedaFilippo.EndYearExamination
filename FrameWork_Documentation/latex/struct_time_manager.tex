@@ -1,0 +1,59 @@
+\hypertarget{struct_time_manager}{}\doxysection{Time\+Manager Struct Reference}
+\label{struct_time_manager}\index{TimeManager@{TimeManager}}
+
+
+Utilitie struct to handle time.  
+
+
+
+
+{\ttfamily \#include $<$Time\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Time \mbox{\hyperlink{struct_time_manager_a6aacd53dc0d5b7c0323cb7bd8e794cbd}{Get\+Current\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Return current\+Time.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{struct_time_manager_a8bf3f7e8b1337e4e51ed0a700e87ee1c}{Calculate\+Elapsed\+Time}} (float current\+Time, float last\+Time)
+\begin{DoxyCompactList}\small\item\em Calculate delta between two time value.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utilitie struct to handle time. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_time_manager_a8bf3f7e8b1337e4e51ed0a700e87ee1c}\label{struct_time_manager_a8bf3f7e8b1337e4e51ed0a700e87ee1c}} 
+\index{TimeManager@{TimeManager}!CalculateElapsedTime@{CalculateElapsedTime}}
+\index{CalculateElapsedTime@{CalculateElapsedTime}!TimeManager@{TimeManager}}
+\doxysubsubsection{\texorpdfstring{CalculateElapsedTime()}{CalculateElapsedTime()}}
+{\footnotesize\ttfamily float Time\+Manager\+::\+Calculate\+Elapsed\+Time (\begin{DoxyParamCaption}\item[{float}]{current\+Time,  }\item[{float}]{last\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculate delta between two time value.  
+
+\begin{DoxyReturn}{Returns}
+delta time
+\end{DoxyReturn}
+\mbox{\Hypertarget{struct_time_manager_a6aacd53dc0d5b7c0323cb7bd8e794cbd}\label{struct_time_manager_a6aacd53dc0d5b7c0323cb7bd8e794cbd}} 
+\index{TimeManager@{TimeManager}!GetCurrentTime@{GetCurrentTime}}
+\index{GetCurrentTime@{GetCurrentTime}!TimeManager@{TimeManager}}
+\doxysubsubsection{\texorpdfstring{GetCurrentTime()}{GetCurrentTime()}}
+{\footnotesize\ttfamily sf\+::\+Time Time\+Manager\+::\+Get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return current\+Time.  
+
+\begin{DoxyReturn}{Returns}
+current clock time
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/Time\+Manager.\+h\item 
+Game\+Framework/source/Time\+Manager.\+cpp\end{DoxyCompactItemize}

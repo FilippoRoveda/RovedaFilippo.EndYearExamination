@@ -1,0 +1,35 @@
+\hypertarget{_music_component_8h_source}{}\doxysection{Music\+Component.\+h}
+\label{_music_component_8h_source}\index{GameFramework/source/Components/MusicComponent.h@{GameFramework/source/Components/MusicComponent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}SFML/Audio.hpp"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_music_component}{MusicComponent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}};}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     sf::Music* music = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{15     \textcolor{keywordtype}{bool} looping = \textcolor{keyword}{false};}
+\DoxyCodeLine{16     \textcolor{keywordtype}{float} volume = 0;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} playOnStart = \textcolor{keyword}{false};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_music_component_a0db1562094b94d84ecf2395935bc1c7a}{MusicComponent}}(std::string musicPath, \textcolor{keywordtype}{bool} isLooping, \textcolor{keywordtype}{float} volume, \textcolor{keywordtype}{bool} playOnStart);}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_music_component}{\string~MusicComponent}}() \{ \textcolor{keyword}{delete} music; \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{33     sf::SoundSource::Status \mbox{\hyperlink{class_music_component_a0c586defd7719d2a2567c3426b33e657}{GetStatus}}() \{ \textcolor{keywordflow}{return} music-\/>getStatus(); \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_component_a568929833a6d3a52e14f84df5a5046e3}{Stop}}() \{ music-\/>stop(); \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_music_component_a337e77eb64194f4dc3e0b73702b71e07}{Play}}() \{ music-\/>play(); \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+
+\end{DoxyCode}

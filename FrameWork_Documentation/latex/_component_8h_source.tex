@@ -1,0 +1,38 @@
+\hypertarget{_component_8h_source}{}\doxysection{Component.\+h}
+\label{_component_8h_source}\index{GameFramework/source/Components/Component.h@{GameFramework/source/Components/Component.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}..\(\backslash\)Classes\(\backslash\)Object.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}..\(\backslash\)Classes\(\backslash\)Itickable.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_object}{Object}}, \textcolor{keyword}{public} \mbox{\hyperlink{class_i_tickable}{ITickable}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_game_object}{GameObject}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_game_object}{GameObject}}* owner = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{20     \textcolor{comment}{//Inherited via ITickable}}
+\DoxyCodeLine{21     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a4fa2b6c5c32c6078a933a046d7ee1416}{On\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a1eb11bd35ded7f01a316167d709db3cf}{On\_Fixed\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_component_a41dcbe8141aa92fdadba5c84461ea2de}{Component}}(\textcolor{keyword}{const} std::string name, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isActive = \textcolor{keyword}{true}) : \mbox{\hyperlink{class_object}{Object}}(name, isActive) \{\}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_component_ad82d7393e339c1b19cc17a0d55b5674d}{\string~Component}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39     [[nodiscard]] \mbox{\hyperlink{class_game_object}{GameObject}}* \mbox{\hyperlink{class_component_ab1562f1841698fd1dc06d7f52a08920b}{GetOwner}}() \{ \textcolor{keywordflow}{return} owner; \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_acd5ed74f9cce156d17cc68c4d8353099}{SetOwner}}(\mbox{\hyperlink{class_game_object}{GameObject}}* owner) \{ this-\/>owner = owner; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \};}
+
+\end{DoxyCode}

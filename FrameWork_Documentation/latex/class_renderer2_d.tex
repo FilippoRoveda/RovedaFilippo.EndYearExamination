@@ -1,0 +1,63 @@
+\hypertarget{class_renderer2_d}{}\doxysection{Renderer2D Class Reference}
+\label{class_renderer2_d}\index{Renderer2D@{Renderer2D}}
+
+
+\mbox{\hyperlink{class_component}{Component}} that allows to render texture in a area space in viewport.  
+
+
+
+
+{\ttfamily \#include $<$Renderer2\+D.\+h$>$}
+
+Inheritance diagram for Renderer2D\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_renderer2_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_renderer2_d_a8b0081eff4b513e023cf16e01295822c}\label{class_renderer2_d_a8b0081eff4b513e023cf16e01295822c}} 
+{\bfseries Renderer2D} (std\+::string texture\+\_\+path, bool smooth, bool repeat)
+\item 
+void \mbox{\hyperlink{class_renderer2_d_a5c7307e30e341fe2b3372e70b7c1def7}{Set\+Texture\+Path}} (std\+::string texture\+\_\+path, bool smooth, bool repeat)
+\begin{DoxyCompactList}\small\item\em Set texture from a path given by user, if this is not valid return a Debug warning. Otherwise set this whit the given value of smoothness and repeat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_renderer2_d_a1c9f2dcd21107cce1d0f06a23f0c9e12}\label{class_renderer2_d_a1c9f2dcd21107cce1d0f06a23f0c9e12}} 
+sf\+::\+Texture $\ast$ {\bfseries \+\_\+texture}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_renderer2_d_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_renderer2_d_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_component}{Component}} that allows to render texture in a area space in viewport. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_renderer2_d_a5c7307e30e341fe2b3372e70b7c1def7}\label{class_renderer2_d_a5c7307e30e341fe2b3372e70b7c1def7}} 
+\index{Renderer2D@{Renderer2D}!SetTexturePath@{SetTexturePath}}
+\index{SetTexturePath@{SetTexturePath}!Renderer2D@{Renderer2D}}
+\doxysubsubsection{\texorpdfstring{SetTexturePath()}{SetTexturePath()}}
+{\footnotesize\ttfamily void Renderer2\+D\+::\+Set\+Texture\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{texture\+\_\+path,  }\item[{bool}]{smooth,  }\item[{bool}]{repeat }\end{DoxyParamCaption})}
+
+
+
+Set texture from a path given by user, if this is not valid return a Debug warning. Otherwise set this whit the given value of smoothness and repeat. 
+
+\begin{DoxyReturn}{Returns}
+axis vector 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/Renderer2\+D.\+h\item 
+Game\+Framework/source/\+Components/Renderer2\+D.\+cpp\end{DoxyCompactItemize}

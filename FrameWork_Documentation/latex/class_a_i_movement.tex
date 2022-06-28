@@ -1,0 +1,144 @@
+\hypertarget{class_a_i_movement}{}\doxysection{AIMovement Class Reference}
+\label{class_a_i_movement}\index{AIMovement@{AIMovement}}
+
+
+\mbox{\hyperlink{class_component}{Component}} that move \mbox{\hyperlink{class_agent}{Agent}} object with a Rect\+Transform component inside the world scene \textbackslash{}following directories given by a Movement\+Algorithm.  
+
+
+
+
+{\ttfamily \#include $<$AIMovement.\+h$>$}
+
+Inheritance diagram for AIMovement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_a_i_movement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_a_i_movement_a0877991064a8dad3e6433f08fd3e9b9a}{AIMovement}} ()
+\begin{DoxyCompactList}\small\item\em Constructor, initialize seek\+Str\+Al. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_a_i_movement_a7b69cbde5a913d3f453258e2fe86b9e7}{$\sim$\+AIMovement}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_i_movement_aa0f0e0ec416bbc0bed70db451f79f348}{Get\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Detect character in scene and pass his information to the Seek\+Algorythm to update all references. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a10bcd749ebaaeee4775a964fe50a6e89}\label{class_a_i_movement_a10bcd749ebaaeee4775a964fe50a6e89}} 
+\mbox{\hyperlink{class_application}{Application}} $\ast$ {\bfseries context} = nullptr
+\item 
+\mbox{\Hypertarget{class_a_i_movement_ac0d5e8959256d79bdd0496389434c9cc}\label{class_a_i_movement_ac0d5e8959256d79bdd0496389434c9cc}} 
+\mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} $\ast$ {\bfseries my\+Transform} = nullptr
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a3fdad89bacd4a6fc49a291fd7f9eac03}\label{class_a_i_movement_a3fdad89bacd4a6fc49a291fd7f9eac03}} 
+\mbox{\hyperlink{class_seek_steering_algorythm}{Seek\+Steering\+Algorythm}} $\ast$ {\bfseries seek\+Str\+Al} = nullptr
+\item 
+\mbox{\Hypertarget{class_a_i_movement_ae83c43c598d4521ca8cb9661c6e3707c}\label{class_a_i_movement_ae83c43c598d4521ca8cb9661c6e3707c}} 
+\mbox{\hyperlink{class_character}{Character}} $\ast$ {\bfseries target} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_i_movement_af08b067a7891a11d9045e9361fa8ae14}{On\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Update handled entity position reciving data from \mbox{\hyperlink{class_seek_steering_algorythm}{Seek\+Steering\+Algorythm}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_i_movement_ae1836d842f8cf060266bbcb818c46d44}\label{class_a_i_movement_ae1836d842f8cf060266bbcb818c46d44}} 
+float {\bfseries max\+Speed} = 100
+\item 
+\mbox{\Hypertarget{class_a_i_movement_af184bb90675b71568ef32afcf6a14fac}\label{class_a_i_movement_af184bb90675b71568ef32afcf6a14fac}} 
+float {\bfseries radius} = 200
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a28b920de34b1f672796c0693738805b3}\label{class_a_i_movement_a28b920de34b1f672796c0693738805b3}} 
+sf\+::\+Vector2f {\bfseries position}
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a80a4a84fc56e5bc7bfbe6296556c3898}\label{class_a_i_movement_a80a4a84fc56e5bc7bfbe6296556c3898}} 
+float {\bfseries orientation} = 0.\+0f
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a960a0bbd8ea78c91d2c96be8478d6438}\label{class_a_i_movement_a960a0bbd8ea78c91d2c96be8478d6438}} 
+sf\+::\+Vector2f {\bfseries velocity} = \{0, 0\}
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a7362ffc8de5282f036e5f6530f35766d}\label{class_a_i_movement_a7362ffc8de5282f036e5f6530f35766d}} 
+float {\bfseries rotation} = 0.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_i_movement_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_a_i_movement_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_component}{Component}} that move \mbox{\hyperlink{class_agent}{Agent}} object with a Rect\+Transform component inside the world scene \textbackslash{}following directories given by a Movement\+Algorithm. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_a_i_movement_a0877991064a8dad3e6433f08fd3e9b9a}\label{class_a_i_movement_a0877991064a8dad3e6433f08fd3e9b9a}} 
+\index{AIMovement@{AIMovement}!AIMovement@{AIMovement}}
+\index{AIMovement@{AIMovement}!AIMovement@{AIMovement}}
+\doxysubsubsection{\texorpdfstring{AIMovement()}{AIMovement()}}
+{\footnotesize\ttfamily AIMovement\+::\+AIMovement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor, initialize seek\+Str\+Al. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_i_movement_a7b69cbde5a913d3f453258e2fe86b9e7}\label{class_a_i_movement_a7b69cbde5a913d3f453258e2fe86b9e7}} 
+\index{AIMovement@{AIMovement}!````~AIMovement@{$\sim$AIMovement}}
+\index{````~AIMovement@{$\sim$AIMovement}!AIMovement@{AIMovement}}
+\doxysubsubsection{\texorpdfstring{$\sim$AIMovement()}{~AIMovement()}}
+{\footnotesize\ttfamily AIMovement\+::$\sim$\+AIMovement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_i_movement_aa0f0e0ec416bbc0bed70db451f79f348}\label{class_a_i_movement_aa0f0e0ec416bbc0bed70db451f79f348}} 
+\index{AIMovement@{AIMovement}!GetTarget@{GetTarget}}
+\index{GetTarget@{GetTarget}!AIMovement@{AIMovement}}
+\doxysubsubsection{\texorpdfstring{GetTarget()}{GetTarget()}}
+{\footnotesize\ttfamily void AIMovement\+::\+Get\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Detect character in scene and pass his information to the Seek\+Algorythm to update all references. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_i_movement_af08b067a7891a11d9045e9361fa8ae14}\label{class_a_i_movement_af08b067a7891a11d9045e9361fa8ae14}} 
+\index{AIMovement@{AIMovement}!On\_Update@{On\_Update}}
+\index{On\_Update@{On\_Update}!AIMovement@{AIMovement}}
+\doxysubsubsection{\texorpdfstring{On\_Update()}{On\_Update()}}
+{\footnotesize\ttfamily void AIMovement\+::\+On\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Update handled entity position reciving data from \mbox{\hyperlink{class_seek_steering_algorythm}{Seek\+Steering\+Algorythm}}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a4fa2b6c5c32c6078a933a046d7ee1416}{Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/AIMovement.\+h\item 
+Game\+Framework/source/\+Components/AIMovement.\+cpp\end{DoxyCompactItemize}

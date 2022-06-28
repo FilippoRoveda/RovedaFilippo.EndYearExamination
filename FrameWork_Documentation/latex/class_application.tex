@@ -1,0 +1,198 @@
+\hypertarget{class_application}{}\doxysection{Application Class Reference}
+\label{class_application}\index{Application@{Application}}
+
+
+\mbox{\hyperlink{class_application}{Application}} class, contain every entity in scene, handle windows and views and runs the core application loop.  
+
+
+
+
+{\ttfamily \#include $<$Application.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_afa8cc05ce6b6092be5ecdfdae44e05f8}\label{class_application_afa8cc05ce6b6092be5ecdfdae44e05f8}} 
+{\bfseries Application} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, set \+\_\+\+Window to nullptr, fps\+Limit\+Enabled = false and max\+FPS to 0.  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_a748bca84fefb9c12661cfaa2f623748d}\label{class_application_a748bca84fefb9c12661cfaa2f623748d}} 
+{\bfseries $\sim$\+Application} ()
+\begin{DoxyCompactList}\small\item\em Default destructor.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_af23dccab284420e3b08e524cb06f94e1}{Create\+Window}} (unsigned int window\+Width, unsigned int window\+Height, const char $\ast$window\+Title)
+\begin{DoxyCompactList}\small\item\em Creates application window  \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_application_a9214e142c72d5c808d5a6adabdb0b20f}{Is\+Running}} () const
+\begin{DoxyCompactList}\small\item\em Get TRUE if the application should kill itself.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_aa69422776db6b06b1dc0114f491884fd}{Set\+Max\+FPS}} (unsigned limit)
+\item 
+\mbox{\Hypertarget{class_application_a9383276c40e79efdf7a02a3f43e26827}\label{class_application_a9383276c40e79efdf7a02a3f43e26827}} 
+void {\bfseries Enable\+FPSLimit} ()
+\begin{DoxyCompactList}\small\item\em Enabled the FPS limit  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_a0696c16a6fe33102d7e8cdae9a51dd7e}\label{class_application_a0696c16a6fe33102d7e8cdae9a51dd7e}} 
+void {\bfseries Disable\+FPSLimit} ()
+\begin{DoxyCompactList}\small\item\em Disable the FPS limit (enable infinite frames per second)  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_ac786fd9f4ad1c6080b995c53e5c41e0a}\label{class_application_ac786fd9f4ad1c6080b995c53e5c41e0a}} 
+void {\bfseries Enable\+Fixed\+Update} ()
+\begin{DoxyCompactList}\small\item\em Enable fixed update  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_ab497921d929f9a0d7e6d69b45804621d}\label{class_application_ab497921d929f9a0d7e6d69b45804621d}} 
+void {\bfseries Disable\+Fixed\+Update} ()
+\begin{DoxyCompactList}\small\item\em Disable fixed update  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_aae08652ea21d0a310a7c74f5fb3dd9e1}{Set\+Milliseconds\+For\+Fixed\+Update}} (float milliseconds)
+\begin{DoxyCompactList}\small\item\em Set the number of milliseconds for fixed update  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_a152d8bd1768b9a0736001f3373e6990f}{Set\+Background\+Color}} (sf\+::\+Color color)
+\begin{DoxyCompactList}\small\item\em Set the background color from sf\+::\+Color type  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_a44500587e252da1ea3926c4aa468d2c0}{Set\+Background\+Color}} (sf\+::\+Uint8 red, sf\+::\+Uint8 green, sf\+::\+Uint8 blue, sf\+::\+Uint8 alpha)
+\begin{DoxyCompactList}\small\item\em Set the background color from 3 RGB float value and a float alpha value  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_aaf09cd6cb412086dc039e28cdb059f0d}\label{class_application_aaf09cd6cb412086dc039e28cdb059f0d}} 
+void {\bfseries Run} ()
+\begin{DoxyCompactList}\small\item\em Executes application lifecycle.  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_a34b3e031cb81b0509a4a4a632f13aa9a}\label{class_application_a34b3e031cb81b0509a4a4a632f13aa9a}} 
+void {\bfseries Add\+Entity} (\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$entity)
+\begin{DoxyCompactList}\small\item\em Add a \mbox{\hyperlink{class_game_object}{Game\+Object}} to all\+Entities vector in application.  \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_application_a21a1d02f27a1a9246201ce6829200ad6}\label{class_application_a21a1d02f27a1a9246201ce6829200ad6}} 
+void {\bfseries Remove\+Entity} (\mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$entity)
+\begin{DoxyCompactList}\small\item\em Remove specific \mbox{\hyperlink{class_game_object}{Game\+Object}} to all\+Entities vector in application.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_application_a5caf2d065b21c9a11a52856d852968b8}{Add\+Camera\+In\+Scene}} (\mbox{\hyperlink{class_camera_component}{Camera\+Component}} $\ast$camera)
+\begin{DoxyCompactList}\small\item\em Add a \mbox{\hyperlink{class_camera_component}{Camera\+Component}} to camera\+In\+Scene array that stores all view camera actually in scene.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_a35443233e897b940b8d8da1f28203384}\label{class_application_a35443233e897b940b8d8da1f28203384}} 
+std\+::vector$<$ \mbox{\hyperlink{class_game_object}{Game\+Object}} $\ast$ $>$ {\bfseries all\+Entities}
+\item 
+\mbox{\Hypertarget{class_application_ac62543a76076cd83a1d6f2f8a38c52ac}\label{class_application_ac62543a76076cd83a1d6f2f8a38c52ac}} 
+std\+::vector$<$ \mbox{\hyperlink{class_camera_component}{Camera\+Component}} $\ast$ $>$ {\bfseries all\+Camera\+In\+Scene}
+\item 
+\mbox{\Hypertarget{class_application_af34b49965c05c054c0258bba186de6eb}\label{class_application_af34b49965c05c054c0258bba186de6eb}} 
+\mbox{\hyperlink{class_camera_component}{Camera\+Component}} $\ast$ {\bfseries current\+Camera} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_a98539f2adfde5403f64e91bd769b8514}\label{class_application_a98539f2adfde5403f64e91bd769b8514}} 
+sf\+::\+Render\+Window $\ast$ {\bfseries \+\_\+\+Window} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_application_ae834a5e62eff7d0adb1092a0693388f7}\label{class_application_ae834a5e62eff7d0adb1092a0693388f7}} 
+class {\bfseries Camera\+Component}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_application}{Application}} class, contain every entity in scene, handle windows and views and runs the core application loop. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_application_a5caf2d065b21c9a11a52856d852968b8}\label{class_application_a5caf2d065b21c9a11a52856d852968b8}} 
+\index{Application@{Application}!AddCameraInScene@{AddCameraInScene}}
+\index{AddCameraInScene@{AddCameraInScene}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{AddCameraInScene()}{AddCameraInScene()}}
+{\footnotesize\ttfamily void Application\+::\+Add\+Camera\+In\+Scene (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_camera_component}{Camera\+Component}} $\ast$}]{camera }\end{DoxyParamCaption})}
+
+
+
+Add a \mbox{\hyperlink{class_camera_component}{Camera\+Component}} to camera\+In\+Scene array that stores all view camera actually in scene.  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_af23dccab284420e3b08e524cb06f94e1}\label{class_application_af23dccab284420e3b08e524cb06f94e1}} 
+\index{Application@{Application}!CreateWindow@{CreateWindow}}
+\index{CreateWindow@{CreateWindow}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{CreateWindow()}{CreateWindow()}}
+{\footnotesize\ttfamily void Application\+::\+Create\+Window (\begin{DoxyParamCaption}\item[{unsigned int}]{window\+Width,  }\item[{unsigned int}]{window\+Height,  }\item[{const char $\ast$}]{window\+Title }\end{DoxyParamCaption})}
+
+
+
+Creates application window  
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+Width} & the window width\\
+\hline
+{\em window\+Height} & the window height\\
+\hline
+{\em window\+Title} & window main title\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_a9214e142c72d5c808d5a6adabdb0b20f}\label{class_application_a9214e142c72d5c808d5a6adabdb0b20f}} 
+\index{Application@{Application}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{IsRunning()}{IsRunning()}}
+{\footnotesize\ttfamily bool Application\+::\+Is\+Running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get TRUE if the application should kill itself.  
+
+Return TRUE if application\textquotesingle{}s window is still open. 
+
+\begin{DoxyReturn}{Returns}
+TRUE or FALSE
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_a152d8bd1768b9a0736001f3373e6990f}\label{class_application_a152d8bd1768b9a0736001f3373e6990f}} 
+\index{Application@{Application}!SetBackgroundColor@{SetBackgroundColor}}
+\index{SetBackgroundColor@{SetBackgroundColor}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{SetBackgroundColor()}{SetBackgroundColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Application\+::\+Set\+Background\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Color}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the background color from sf\+::\+Color type  
+
+Set background coloro using sf\+::\+Color class. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_a44500587e252da1ea3926c4aa468d2c0}\label{class_application_a44500587e252da1ea3926c4aa468d2c0}} 
+\index{Application@{Application}!SetBackgroundColor@{SetBackgroundColor}}
+\index{SetBackgroundColor@{SetBackgroundColor}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{SetBackgroundColor()}{SetBackgroundColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Application\+::\+Set\+Background\+Color (\begin{DoxyParamCaption}\item[{sf\+::\+Uint8}]{red,  }\item[{sf\+::\+Uint8}]{green,  }\item[{sf\+::\+Uint8}]{blue,  }\item[{sf\+::\+Uint8}]{alpha }\end{DoxyParamCaption})}
+
+
+
+Set the background color from 3 RGB float value and a float alpha value  
+
+Set background coloro using 4 float value for color component\+: red, green, blue, alpha. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_application_aa69422776db6b06b1dc0114f491884fd}\label{class_application_aa69422776db6b06b1dc0114f491884fd}} 
+\index{Application@{Application}!SetMaxFPS@{SetMaxFPS}}
+\index{SetMaxFPS@{SetMaxFPS}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{SetMaxFPS()}{SetMaxFPS()}}
+{\footnotesize\ttfamily void Application\+::\+Set\+Max\+FPS (\begin{DoxyParamCaption}\item[{unsigned}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_application_aae08652ea21d0a310a7c74f5fb3dd9e1}\label{class_application_aae08652ea21d0a310a7c74f5fb3dd9e1}} 
+\index{Application@{Application}!SetMillisecondsForFixedUpdate@{SetMillisecondsForFixedUpdate}}
+\index{SetMillisecondsForFixedUpdate@{SetMillisecondsForFixedUpdate}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{SetMillisecondsForFixedUpdate()}{SetMillisecondsForFixedUpdate()}}
+{\footnotesize\ttfamily void Application\+::\+Set\+Milliseconds\+For\+Fixed\+Update (\begin{DoxyParamCaption}\item[{float}]{milliseconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the number of milliseconds for fixed update  
+
+
+\begin{DoxyParams}{Parameters}
+{\em milliseconds} & fixed update frequency -\/ i.\+e. 0.\+016\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/Application.\+h\item 
+Game\+Framework/source/Application.\+cpp\end{DoxyCompactItemize}

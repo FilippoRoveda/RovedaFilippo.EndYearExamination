@@ -1,0 +1,41 @@
+\hypertarget{_collider_8h_source}{}\doxysection{Collider.\+h}
+\label{_collider_8h_source}\index{GameFramework/source/Components/Collider.h@{GameFramework/source/Components/Collider.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}RectTransform.h"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_collider}{Collider}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_rect_tranform}{RectTranform}}* body;}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{keywordtype}{float} push;}
+\DoxyCodeLine{17     sf::Vector2f* collisionDirection;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordtype}{bool} isMovable = \textcolor{keyword}{true};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_collider}{Collider}}(\mbox{\hyperlink{class_rect_tranform}{RectTranform}}* body, \textcolor{keywordtype}{float} push);}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_collider}{\string~Collider}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_collider_abaea075c36dd251681be5d6ae5aeed0e}{CheckCollision}}(\mbox{\hyperlink{class_collider}{Collider}}* other, \textcolor{keywordtype}{float} push);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{38     sf::Vector2f \mbox{\hyperlink{class_collider_a62c34befea96aa31bc6a52d7f0c411c5}{GetPosition}}() \{ \textcolor{keywordflow}{return} body-\/>\mbox{\hyperlink{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}{GetTransform}}()-\/>getPosition(); \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     sf::Vector2f \mbox{\hyperlink{class_collider_aff2276b879027ea468dc208101ae858e}{GetHalfSize}}() \{ \textcolor{keywordflow}{return} body-\/>\mbox{\hyperlink{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}{GetTransform}}()-\/>getSize() / 2.0f; \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_collider_aa69b49e00896d36529eb64ce7f4d8e22}{Move}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y) \{ body-\/>\mbox{\hyperlink{class_rect_tranform_a6c51e7590b2dc948b2bd7436b3b3cfe0}{GetTransform}}()-\/>move(x, y); \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59     sf::Vector2f* \mbox{\hyperlink{class_collider_ae1454a79a846b63eb5a3e1ff13107ce8}{GetCollisionDirection}}() \{ \textcolor{keywordflow}{return} collisionDirection; \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,134 @@
+\hypertarget{class_camera_component}{}\doxysection{Camera\+Component Class Reference}
+\label{class_camera_component}\index{CameraComponent@{CameraComponent}}
+
+
+\mbox{\hyperlink{class_camera_component}{Camera\+Component}}, create, set, and handle the camera\+View, if attached to a movable \mbox{\hyperlink{class_character}{Character}} it\textquotesingle{}s position can be updated in time.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Component.\+h$>$}
+
+Inheritance diagram for Camera\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_camera_component}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_component_a13bb69cc4137423ff7f1fb53039c85af}{Camera\+Component}} (sf\+::\+Vector2f center, sf\+::\+Vector2f size, \mbox{\hyperlink{class_application}{Application}} $\ast$context, int priority, \mbox{\hyperlink{class_character}{Character}} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Constructor. Set contexts, initialize view and its position and add that in scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_camera_component_a977e080c45152719c5e6335cfb0698fc}{$\sim$\+Camera\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_component_a6e2e07b8c7845cc4bc1ab1cc0736fdc6}{Set\+View}} ()
+\begin{DoxyCompactList}\small\item\em Set this camera\+View fore the context application \+\_\+\+Window member. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_camera_component_a74f6948a334bf256ef0c4281e5339313}\label{class_camera_component_a74f6948a334bf256ef0c4281e5339313}} 
+float {\bfseries max\+Height} = 300.\+0f
+\item 
+\mbox{\Hypertarget{class_camera_component_af8d55a60a4073efde5a01fdca3eed7a8}\label{class_camera_component_af8d55a60a4073efde5a01fdca3eed7a8}} 
+float {\bfseries min\+Delta\+XPos} = 5.\+0f
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_component_adddb3c88e87ab6d546faa958db386f0a}{On\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Update the position of the view center based on the character movement. If delta position is too small the camera remains in the same position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_component_a1c9a80e8d6a5d812fd71b0bda23a2be8}{On\+\_\+\+Fixed\+\_\+\+Update}} (const float delta\+\_\+time) override
+\begin{DoxyCompactList}\small\item\em Default On\+\_\+\+Fixed\+\_\+\+Update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_camera_component_a23f25bcc02a0e94c2f5a4188496b04d0}\label{class_camera_component_a23f25bcc02a0e94c2f5a4188496b04d0}} 
+class {\bfseries Application}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_camera_component}{Camera\+Component}}, create, set, and handle the camera\+View, if attached to a movable \mbox{\hyperlink{class_character}{Character}} it\textquotesingle{}s position can be updated in time. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_camera_component_a13bb69cc4137423ff7f1fb53039c85af}\label{class_camera_component_a13bb69cc4137423ff7f1fb53039c85af}} 
+\index{CameraComponent@{CameraComponent}!CameraComponent@{CameraComponent}}
+\index{CameraComponent@{CameraComponent}!CameraComponent@{CameraComponent}}
+\doxysubsubsection{\texorpdfstring{CameraComponent()}{CameraComponent()}}
+{\footnotesize\ttfamily Camera\+Component\+::\+Camera\+Component (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{center,  }\item[{sf\+::\+Vector2f}]{size,  }\item[{\mbox{\hyperlink{class_application}{Application}} $\ast$}]{context,  }\item[{int}]{priority,  }\item[{\mbox{\hyperlink{class_character}{Character}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+
+
+Constructor. Set contexts, initialize view and its position and add that in scene. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_camera_component_a977e080c45152719c5e6335cfb0698fc}\label{class_camera_component_a977e080c45152719c5e6335cfb0698fc}} 
+\index{CameraComponent@{CameraComponent}!````~CameraComponent@{$\sim$CameraComponent}}
+\index{````~CameraComponent@{$\sim$CameraComponent}!CameraComponent@{CameraComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$CameraComponent()}{~CameraComponent()}}
+{\footnotesize\ttfamily Camera\+Component\+::$\sim$\+Camera\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_component_a1c9a80e8d6a5d812fd71b0bda23a2be8}\label{class_camera_component_a1c9a80e8d6a5d812fd71b0bda23a2be8}} 
+\index{CameraComponent@{CameraComponent}!On\_Fixed\_Update@{On\_Fixed\_Update}}
+\index{On\_Fixed\_Update@{On\_Fixed\_Update}!CameraComponent@{CameraComponent}}
+\doxysubsubsection{\texorpdfstring{On\_Fixed\_Update()}{On\_Fixed\_Update()}}
+{\footnotesize\ttfamily void Camera\+Component\+::\+On\+\_\+\+Fixed\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default On\+\_\+\+Fixed\+\_\+\+Update method. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a1eb11bd35ded7f01a316167d709db3cf}{Component}}.
+
+\mbox{\Hypertarget{class_camera_component_adddb3c88e87ab6d546faa958db386f0a}\label{class_camera_component_adddb3c88e87ab6d546faa958db386f0a}} 
+\index{CameraComponent@{CameraComponent}!On\_Update@{On\_Update}}
+\index{On\_Update@{On\_Update}!CameraComponent@{CameraComponent}}
+\doxysubsubsection{\texorpdfstring{On\_Update()}{On\_Update()}}
+{\footnotesize\ttfamily void Camera\+Component\+::\+On\+\_\+\+Update (\begin{DoxyParamCaption}\item[{const float}]{delta\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Update the position of the view center based on the character movement. If delta position is too small the camera remains in the same position. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_component_a4fa2b6c5c32c6078a933a046d7ee1416}{Component}}.
+
+\mbox{\Hypertarget{class_camera_component_a6e2e07b8c7845cc4bc1ab1cc0736fdc6}\label{class_camera_component_a6e2e07b8c7845cc4bc1ab1cc0736fdc6}} 
+\index{CameraComponent@{CameraComponent}!SetView@{SetView}}
+\index{SetView@{SetView}!CameraComponent@{CameraComponent}}
+\doxysubsubsection{\texorpdfstring{SetView()}{SetView()}}
+{\footnotesize\ttfamily void Camera\+Component\+::\+Set\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set this camera\+View fore the context application \+\_\+\+Window member. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/Camera\+Component.\+h\item 
+Game\+Framework/source/\+Components/Camera\+Component.\+cpp\end{DoxyCompactItemize}

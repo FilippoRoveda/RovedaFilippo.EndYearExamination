@@ -1,0 +1,123 @@
+\hypertarget{class_collider}{}\doxysection{Collider Class Reference}
+\label{class_collider}\index{Collider@{Collider}}
+
+
+\mbox{\hyperlink{class_collider}{Collider}} component that detect and handle collision between another collider component. Can be attached to every rect transform.  
+
+
+
+
+{\ttfamily \#include $<$Collider.\+h$>$}
+
+Inheritance diagram for Collider\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_collider}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_collider_a6ace2d3847ab3502f22b32970188f77e}\label{class_collider_a6ace2d3847ab3502f22b32970188f77e}} 
+{\bfseries Collider} (\mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} $\ast$body, float push)
+\item 
+bool \mbox{\hyperlink{class_collider_abaea075c36dd251681be5d6ae5aeed0e}{Check\+Collision}} (\mbox{\hyperlink{class_collider}{Collider}} $\ast$other, float push)
+\begin{DoxyCompactList}\small\item\em Detect if two \mbox{\hyperlink{class_collider}{Collider}} are colliding. This use (AABB) algorythm checking 2 \mbox{\hyperlink{class_game_object}{Game\+Object}} origin distance, detect interpolation using their face half size and finally decide the direction of the interpolation based on the X/Y interpolation vector values.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_collider_a62c34befea96aa31bc6a52d7f0c411c5}{Get\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Get current scene position of the handled Rect\+Transform.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_collider_aff2276b879027ea468dc208101ae858e}{Get\+Half\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Get the half size of the linked Rect\+Transform for detecting interpolation.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_collider_aa69b49e00896d36529eb64ce7f4d8e22}{Move}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Move of an x/y offset the Rect\+Transform linked to this component.  \end{DoxyCompactList}\item 
+sf\+::\+Vector2f $\ast$ \mbox{\hyperlink{class_collider_ae1454a79a846b63eb5a3e1ff13107ce8}{Get\+Collision\+Direction}} ()
+\begin{DoxyCompactList}\small\item\em Return a vector containing collision direction based on wich part of the collider is colliding.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_collider_a633e7498bbe1dcfc1c56338ba6c9d40c}\label{class_collider_a633e7498bbe1dcfc1c56338ba6c9d40c}} 
+float {\bfseries push}
+\item 
+\mbox{\Hypertarget{class_collider_a9ddfbc734cec3ec8c12b722a427049a2}\label{class_collider_a9ddfbc734cec3ec8c12b722a427049a2}} 
+sf\+::\+Vector2f $\ast$ {\bfseries collision\+Direction}
+\item 
+\mbox{\Hypertarget{class_collider_a9d6acfe278b0aba86ecd9076c5ee8620}\label{class_collider_a9d6acfe278b0aba86ecd9076c5ee8620}} 
+bool {\bfseries is\+Movable} = true
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_collider}{Collider}} component that detect and handle collision between another collider component. Can be attached to every rect transform. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_collider_abaea075c36dd251681be5d6ae5aeed0e}\label{class_collider_abaea075c36dd251681be5d6ae5aeed0e}} 
+\index{Collider@{Collider}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily bool Collider\+::\+Check\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_collider}{Collider}} $\ast$}]{other,  }\item[{float}]{push }\end{DoxyParamCaption})}
+
+
+
+Detect if two \mbox{\hyperlink{class_collider}{Collider}} are colliding. This use (AABB) algorythm checking 2 \mbox{\hyperlink{class_game_object}{Game\+Object}} origin distance, detect interpolation using their face half size and finally decide the direction of the interpolation based on the X/Y interpolation vector values.  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_collider_ae1454a79a846b63eb5a3e1ff13107ce8}\label{class_collider_ae1454a79a846b63eb5a3e1ff13107ce8}} 
+\index{Collider@{Collider}!GetCollisionDirection@{GetCollisionDirection}}
+\index{GetCollisionDirection@{GetCollisionDirection}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{GetCollisionDirection()}{GetCollisionDirection()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f $\ast$ Collider\+::\+Get\+Collision\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return a vector containing collision direction based on wich part of the collider is colliding.  
+
+\begin{DoxyReturn}{Returns}
+collision direction (+/-\/ 1(x, +/-\/(1) y))
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_collider_aff2276b879027ea468dc208101ae858e}\label{class_collider_aff2276b879027ea468dc208101ae858e}} 
+\index{Collider@{Collider}!GetHalfSize@{GetHalfSize}}
+\index{GetHalfSize@{GetHalfSize}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{GetHalfSize()}{GetHalfSize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Collider\+::\+Get\+Half\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the half size of the linked Rect\+Transform for detecting interpolation.  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_collider_a62c34befea96aa31bc6a52d7f0c411c5}\label{class_collider_a62c34befea96aa31bc6a52d7f0c411c5}} 
+\index{Collider@{Collider}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Collider\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get current scene position of the handled Rect\+Transform.  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_collider_aa69b49e00896d36529eb64ce7f4d8e22}\label{class_collider_aa69b49e00896d36529eb64ce7f4d8e22}} 
+\index{Collider@{Collider}!Move@{Move}}
+\index{Move@{Move}!Collider@{Collider}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Collider\+::\+Move (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move of an x/y offset the Rect\+Transform linked to this component.  
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/Collider.\+h\item 
+Game\+Framework/source/\+Components/Collider.\+cpp\end{DoxyCompactItemize}

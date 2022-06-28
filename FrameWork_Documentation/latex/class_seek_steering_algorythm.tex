@@ -1,0 +1,103 @@
+\hypertarget{class_seek_steering_algorythm}{}\doxysection{Seek\+Steering\+Algorythm Class Reference}
+\label{class_seek_steering_algorythm}\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+
+
+Seek\+Steering Kinematic algorythm, implement a radial detection that stops tha handled Rect\+Transform from moving \textbackslash{} once target is reached.  
+
+
+
+
+{\ttfamily \#include $<$Seek\+Steering.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_seek_steering_algorythm_ac14a5cabd236f9e808b599aedd75ba08}{Seek\+Steering\+Algorythm}} ()
+\item 
+\mbox{\hyperlink{class_seek_steering_algorythm_a94bd0ae5355d7f0d100b85f0447c8a88}{$\sim$\+Seek\+Steering\+Algorythm}} ()
+\item 
+void \mbox{\hyperlink{class_seek_steering_algorythm_a057bc02b07e07a724370abdc1776afec}{Construct}} (\mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} $\ast$agent, \mbox{\hyperlink{class_character}{Character}} $\ast$target, float max\+Speed, float radius)
+\item 
+\mbox{\hyperlink{struct_steering_data}{Steering\+Data}} $\ast$ \mbox{\hyperlink{class_seek_steering_algorythm_a3270540682fb140fbdd981a1f6eb8678}{Get\+Steering}} ()
+\item 
+float \mbox{\hyperlink{class_seek_steering_algorythm_ac887a38f1e4a9f926d0bb6326d732578}{Calculate\+New\+Orientation}} (sf\+::\+Vector2f velocity)
+\item 
+float \mbox{\hyperlink{class_seek_steering_algorythm_a8225d7535b4741c5b327e2c9a32bf8d8}{Vector2\+Lenght}} (sf\+::\+Vector2f vect)
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_seek_steering_algorythm_a759a4ad15b27e9ad1c9668d558704973}{Normalize}} (sf\+::\+Vector2f vect)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_seek_steering_algorythm_a15615de0d9b7ede75dfa7cb109e866cb}\label{class_seek_steering_algorythm_a15615de0d9b7ede75dfa7cb109e866cb}} 
+float {\bfseries max\+Speed}
+\item 
+\mbox{\Hypertarget{class_seek_steering_algorythm_aad3aada60c10261825b1bc232da3f69b}\label{class_seek_steering_algorythm_aad3aada60c10261825b1bc232da3f69b}} 
+float {\bfseries radius}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_seek_steering_algorythm_a1cf906db9131948ded2a92012f3a0a24}\label{class_seek_steering_algorythm_a1cf906db9131948ded2a92012f3a0a24}} 
+\mbox{\hyperlink{struct_static_data}{Static\+Data}} {\bfseries \+\_\+character}
+\item 
+\mbox{\Hypertarget{class_seek_steering_algorythm_a83d857c63965c9381f1a5add3c311bdc}\label{class_seek_steering_algorythm_a83d857c63965c9381f1a5add3c311bdc}} 
+\mbox{\hyperlink{struct_static_data}{Static\+Data}} {\bfseries \+\_\+target}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Seek\+Steering Kinematic algorythm, implement a radial detection that stops tha handled Rect\+Transform from moving \textbackslash{} once target is reached. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_seek_steering_algorythm_ac14a5cabd236f9e808b599aedd75ba08}\label{class_seek_steering_algorythm_ac14a5cabd236f9e808b599aedd75ba08}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{SeekSteeringAlgorythm()}{SeekSteeringAlgorythm()}}
+{\footnotesize\ttfamily Seek\+Steering\+Algorythm\+::\+Seek\+Steering\+Algorythm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\textbackslash{} Default constructor. \textbackslash{} return void \mbox{\Hypertarget{class_seek_steering_algorythm_a94bd0ae5355d7f0d100b85f0447c8a88}\label{class_seek_steering_algorythm_a94bd0ae5355d7f0d100b85f0447c8a88}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!````~SeekSteeringAlgorythm@{$\sim$SeekSteeringAlgorythm}}
+\index{````~SeekSteeringAlgorythm@{$\sim$SeekSteeringAlgorythm}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{$\sim$SeekSteeringAlgorythm()}{~SeekSteeringAlgorythm()}}
+{\footnotesize\ttfamily Seek\+Steering\+Algorythm\+::$\sim$\+Seek\+Steering\+Algorythm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\textbackslash{} Denstructor. \textbackslash{} return void 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_seek_steering_algorythm_ac887a38f1e4a9f926d0bb6326d732578}\label{class_seek_steering_algorythm_ac887a38f1e4a9f926d0bb6326d732578}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!CalculateNewOrientation@{CalculateNewOrientation}}
+\index{CalculateNewOrientation@{CalculateNewOrientation}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{CalculateNewOrientation()}{CalculateNewOrientation()}}
+{\footnotesize\ttfamily float Seek\+Steering\+Algorythm\+::\+Calculate\+New\+Orientation (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{velocity }\end{DoxyParamCaption})}
+
+\textbackslash{} Calculate new orientation for the seeker entity. \textbackslash{} return void \mbox{\Hypertarget{class_seek_steering_algorythm_a057bc02b07e07a724370abdc1776afec}\label{class_seek_steering_algorythm_a057bc02b07e07a724370abdc1776afec}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!Construct@{Construct}}
+\index{Construct@{Construct}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{Construct()}{Construct()}}
+{\footnotesize\ttfamily void Seek\+Steering\+Algorythm\+::\+Construct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_rect_tranform}{Rect\+Tranform}} $\ast$}]{agent,  }\item[{\mbox{\hyperlink{class_character}{Character}} $\ast$}]{target,  }\item[{float}]{max\+Speed,  }\item[{float}]{radius }\end{DoxyParamCaption})}
+
+\textbackslash{} Update all referenced objects data. \textbackslash{} return void \mbox{\Hypertarget{class_seek_steering_algorythm_a3270540682fb140fbdd981a1f6eb8678}\label{class_seek_steering_algorythm_a3270540682fb140fbdd981a1f6eb8678}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!GetSteering@{GetSteering}}
+\index{GetSteering@{GetSteering}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{GetSteering()}{GetSteering()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_steering_data}{Steering\+Data}} $\ast$ Seek\+Steering\+Algorythm\+::\+Get\+Steering (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\textbackslash{} If the target isn\textquotesingle{}t reached calculate new \mbox{\hyperlink{struct_steering_data}{Steering\+Data}} struct. \textbackslash{} return void \mbox{\Hypertarget{class_seek_steering_algorythm_a759a4ad15b27e9ad1c9668d558704973}\label{class_seek_steering_algorythm_a759a4ad15b27e9ad1c9668d558704973}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Seek\+Steering\+Algorythm\+::\+Normalize (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{vect }\end{DoxyParamCaption})}
+
+\textbackslash{} Utility that normalize a given vector. \textbackslash{} return void \mbox{\Hypertarget{class_seek_steering_algorythm_a8225d7535b4741c5b327e2c9a32bf8d8}\label{class_seek_steering_algorythm_a8225d7535b4741c5b327e2c9a32bf8d8}} 
+\index{SeekSteeringAlgorythm@{SeekSteeringAlgorythm}!Vector2Lenght@{Vector2Lenght}}
+\index{Vector2Lenght@{Vector2Lenght}!SeekSteeringAlgorythm@{SeekSteeringAlgorythm}}
+\doxysubsubsection{\texorpdfstring{Vector2Lenght()}{Vector2Lenght()}}
+{\footnotesize\ttfamily float Seek\+Steering\+Algorythm\+::\+Vector2\+Lenght (\begin{DoxyParamCaption}\item[{sf\+::\+Vector2f}]{vect }\end{DoxyParamCaption})}
+
+\textbackslash{} Utility to calculate a vector lenght. \textbackslash{} return void 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+Framework/source/\+Components/\+AIAlgorithm/Seek\+Steering.\+h\item 
+Game\+Framework/source/\+Components/\+AIAlgorithm/Seek\+Steering.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,26 @@
+\hypertarget{_itickable_8h_source}{}\doxysection{Itickable.\+h}
+\label{_itickable_8h_source}\index{GameFramework/source/Classes/Itickable.h@{GameFramework/source/Classes/Itickable.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_i_tickable}{ITickable}} \{}
+\DoxyCodeLine{7 \textcolor{keyword}{private}:}
+\DoxyCodeLine{8     \textcolor{comment}{//True if this GameObject can be updated.}}
+\DoxyCodeLine{9     \textcolor{keywordtype}{bool} tickable = \textcolor{keyword}{true};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{12     }
+\DoxyCodeLine{16     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_tickable_a7a8c01681c5287881e48762133d055f5}{On\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) = 0;}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_tickable_a1f9b56f8a84c2ac57b28ed3458481c63}{On\_Fixed\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) = 0;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_i_tickable_ac66e864fcde728d478ec35d5ed19f823}{Is\_Tick\_Enabled}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} tickable; \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_tickable_a74840db6b07839030eef1ab57597d2db}{Enable}}() \{ tickable = \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_i_tickable_aa5b36eb6d2554af2765a42406152f6c6}{Disable}}() \{ tickable = \textcolor{keyword}{false}; \}}
+\DoxyCodeLine{38 \};}
+
+\end{DoxyCode}

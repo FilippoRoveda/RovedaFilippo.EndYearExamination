@@ -1,0 +1,27 @@
+\hypertarget{_renderer2_d_8h_source}{}\doxysection{Renderer2\+D.\+h}
+\label{_renderer2_d_8h_source}\index{GameFramework/source/Components/Renderer2D.h@{GameFramework/source/Components/Renderer2D.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}..\(\backslash\)Components\(\backslash\)Component.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_renderer2_d}{Renderer2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{16     sf::Texture* \_texture;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_renderer2_d}{Renderer2D}}();}
+\DoxyCodeLine{20     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_renderer2_d}{Renderer2D}}(std::string texture\_path, \textcolor{keywordtype}{bool} smooth, \textcolor{keywordtype}{bool} repeat);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_renderer2_d}{\string~Renderer2D}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_renderer2_d_a5c7307e30e341fe2b3372e70b7c1def7}{SetTexturePath}}(std::string texture\_path, \textcolor{keywordtype}{bool} smooth, \textcolor{keywordtype}{bool} repeat);}
+\DoxyCodeLine{30 \};}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\hypertarget{_camera_component_8h_source}{}\doxysection{Camera\+Component.\+h}
+\label{_camera_component_8h_source}\index{GameFramework/source/Components/CameraComponent.h@{GameFramework/source/Components/CameraComponent.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}Component.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Classes/Character.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}};}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_camera_component}{CameraComponent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_application}{Application}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     sf::View* cameraView;}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_application}{Application}}* context;}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_character}{Character}}* myChar;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} priority;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keywordtype}{float} xpos = 0.0f;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{float} ypos = 0.0f;}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{public}:}
+\DoxyCodeLine{26     \textcolor{keywordtype}{float} maxHeight = 300.0f;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{float} minDeltaXPos = 5.0f;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_component_adddb3c88e87ab6d546faa958db386f0a}{On\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_component_a1c9a80e8d6a5d812fd71b0bda23a2be8}{On\_Fixed\_Update}}(\textcolor{keyword}{const} \textcolor{keywordtype}{float} delta\_time) \textcolor{keyword}{override};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{41     }
+\DoxyCodeLine{47     \mbox{\hyperlink{class_camera_component_a13bb69cc4137423ff7f1fb53039c85af}{CameraComponent}}(sf::Vector2f center, sf:: Vector2f size, \mbox{\hyperlink{class_application}{Application}}* context, \textcolor{keywordtype}{int} priority, \mbox{\hyperlink{class_character}{Character}}* owner);}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{53     \mbox{\hyperlink{class_camera_component_a977e080c45152719c5e6335cfb0698fc}{\string~CameraComponent}}() \{}
+\DoxyCodeLine{54         \textcolor{keyword}{delete} cameraView;}
+\DoxyCodeLine{55     \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     }
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_camera_component_a6e2e07b8c7845cc4bc1ab1cc0736fdc6}{SetView}}();}
+\DoxyCodeLine{63 \};}
+
+\end{DoxyCode}
