@@ -6,7 +6,7 @@ class MovementComponent;
 
 
 /**
-*  /brief Component that manage device inputs.
+* \brief Component that manage device inputs.
 */
 class Controller : public Component
 {

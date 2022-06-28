@@ -7,7 +7,9 @@ struct StaticData {
 	float orientation = 0;
 };
 
-
+/**
+ * \brief Steering data struct for kinematic GameObjects that contain linear and angular veocity.
+ */
 struct SteeringData {
 	inline SteeringData(bool hasReached)
 	{
