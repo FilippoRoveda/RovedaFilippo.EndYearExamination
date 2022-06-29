@@ -183,7 +183,6 @@ private:
 	/// <returns>total frames</returns>
 	void Draw();
 
-	void Initialize();
 
 	/// <summary>
 	/// Check collision event between every GameObject thas has a collider.

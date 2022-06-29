@@ -204,50 +204,12 @@ void Application::Draw()
 	_Window->display();
 }
 
-void Application::Initialize()
-{
-	auto sky = new Sprite();
-	sky->renderer->SetTexturePath("source/resources/void.png", true, true);
-	sky->rectTransform->SetScale(10000000, 3000);
-	sky->rectTransform->SetPosition(-10000,-500);
-	AddEntity(sky);
-	auto factory = new FirstLevelFactory(this);
-	AddEntity(factory->BackGroundandMusic(sf::Vector2f(0, 150)));
-	AddEntity(factory->BackGround(sf::Vector2f(-1920, 150)));
-	AddEntity(factory->BackGround(sf::Vector2f(-3840, 150)));
-	AddEntity(factory->BackGround(sf::Vector2f(1920, 150)));
-	AddEntity(factory->BackGround(sf::Vector2f(3840, 150)));
-	AddEntity(factory->GroundLayer());
-
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 880)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 720)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 560)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 400)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 240)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, 80)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -40)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -200)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(-400, -360)));
-
-
-	AddEntity(factory->NormalBlock(sf::Vector2f(400, 700)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(800, 700)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(1200, 700)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(1600, 500)));
-	AddEntity(factory->NormalBlock(sf::Vector2f(2200,400)));
-
-	AddEntity(factory->MainCharacter(sf::Vector2f(200, 600)));
-	AddEntity(factory->Seeker(sf::Vector2f(-200, 200)));
-
-}
-
 
 /// <summary>
 /// Executes application lifecycle.
 /// </summary>
 void Application::Run()
 {
-	Initialize();
 	PlayMusicsInScene();
 	SetSceneCamera();
 	lastTime = tm.GetCurrentTime();
