@@ -50,7 +50,7 @@ public:
 * \brief Abstract ObjectFactory for the first demonstration level.
 * entity are inspired by an ancient roman theme.
 */
-class FirstLevelFactory : public GameObjectsFactory
+class DECLSPEC FirstLevelFactory : public GameObjectsFactory
 {
 public:
 	/**

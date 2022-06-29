@@ -17,7 +17,7 @@ public:
 	float speed;
 	bool isJumping = false;
 	bool wasJumping = false;
-	float maxJumpForce = 1400.0f;
+	float maxJumpForce = 1550.0f;
 	float currentJumpForce = 0.0f;
 
 
