@@ -3,6 +3,8 @@
 ## Game framework using SFML libraries
 
 You can find this repository at: [GitHub Pages](https://pages.github.com/).
+
+
 Author: Filippo Roveda - filippo.roveda97@gmail.com.
 
 ![This is an image](https://freesvg.org/img/Roman-Soldier.png)
@@ -32,8 +34,11 @@ You can automatically generate a Solution based on your current version of Visua
 Now you have generated the solution and 2 sub-project:  
 
     -GameFramework, a Shared library project that generate .dll to link in other projects.
+
      You can modify it to fix and extende the current version of the Framework.
-    -Sandbox, a console application to generate and test a preset level based on the current version of the Framework. Build him and in his corresponder Binaries folder you will find "Sandbox.exe" to play the prototype scene.
+
+    -Sandbox, a console application to generate and test a preset level based on the current version of the Framework.
+    Build him and in his corresponder Binaries folder you will find "Sandbox.exe" to play the prototype scene.
 
 ## Step 2: know the resources
 In addition to the prevoius folder you can clearly see 2 of them with the names in capslock:
@@ -73,5 +78,4 @@ Now you can navigate trought all the classes, members and method, struct, algory
 
 I also want to thank my fellow students for sharing knowledge and effort with me during these long nights of programming.
     
-
-![This is an image](https://imgbin.com/png/nY6Ft7Jn/warrior-free-content-roman-soldier-5-spartan-army-png)
+![This is an image](http://clipart-library.com/images/8czrM67Mi.jpg)
