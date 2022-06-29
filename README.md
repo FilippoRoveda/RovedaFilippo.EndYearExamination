@@ -3,6 +3,7 @@
 ## Game framework using SFML libraries
 
 You can find this repository at: [GitHub Pages](https://pages.github.com/).
+Author: Filippo Roveda - filippo.roveda97@gmail.com.
 
 ![This is an image](https://freesvg.org/img/Roman-Soldier.png)
 
@@ -11,7 +12,13 @@ This is a simple gameframowk that give you possibilities to make a variety of 2D
 Basically is possible to create and extend a variety of class, such as: a main Application, some type of GameObjects and a lot of Component that modify and increase the GameObjects propierties.
 
 This Framework is based on SFML Multymedia libreries v:2.5.1, here the link: (https://www.sfml-dev.org/).
+
 Here some tutorial about it: (https://www.sfml-dev.org/tutorials/2.5/).
+
+## Step 0: Requirements
+To generate and build the Solution is necessary a VisualStudio version installed(I suggest VS2019).
+To auto-generate documentation is needed Doxygen installed and setted as enviroment variable
+(If you don't have it installed you may look at the step 2.5).
 
 ## Step 1: Generate VisualStudio Solution
 The repository contain only loose files without any project or solutions to work on them.
@@ -22,10 +29,11 @@ You can automatically generate a Solution based on your current version of Visua
 3) Open the command line in the repository folder and here launch the command : premake5 vs(your version).
    Ex: premake5 vs2019
 
-Now you have generated the solution and 2 sub-project:    
+Now you have generated the solution and 2 sub-project:  
+
     -GameFramework, a Shared library project that generate .dll to link in other projects.
      You can modify it to fix and extende the current version of the Framework.
-    -Sandbox, a console application to generate and test a preset level based on the current version of the Framework.
+    -Sandbox, a console application to generate and test a preset level based on the current version of the Framework. Build him and in his corresponder Binaries folder you will find "Sandbox.exe" to play the prototype scene.
 
 ## Step 2: know the resources
 In addition to the prevoius folder you can clearly see 2 of them with the names in capslock:
@@ -40,5 +48,30 @@ For a rapid overview of its class hierarchy you can take a look to the UML diagr
 
 If you need a deeper view in the software structure you need to create some DOXYGEN documentation starting from "docgen" file in the repository folder.
 
+    1)Download CMake from this link: (https://cmake.org/).
+      Unzip the compress archive and install it, you can also set him as variable ambient.
 
+    2)Download Bison&Flex from this link: (https://sourceforge.net/projects/winflexbison/).
+      Unzip the archive, modify the 2 exes name inside it deleting the "win_" prefix.
+      Add the two exes path as enviroment variable in you computer. 
+
+    3)Donwload Doxygen from this link: (https://doxygen.nl/download.html).
+      Or clone the indicated repository on your computer.
+
+    4)Generate the Doxygen solution using CMake.
+
+    5)Build Doxygen solution.
+
+    6)Once you have the Doxygen ".exe" set it as enviroment variable.
+
+    7)Now you can generate the FrameWork documentation running the command:
+      "doxygen docgen" in the repositoy folder.   
+
+Now you can navigate trought all the classes, members and method, struct, algorythm and utilities.
+
+# Thanks:
+
+I also want to thank my fellow students for sharing knowledge and effort with me during these long nights of programming.
     
+
+![This is an image](https://imgbin.com/png/nY6Ft7Jn/warrior-free-content-roman-soldier-5-spartan-army-png)
