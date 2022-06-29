@@ -1,12 +1,13 @@
 #pragma once
 #include "Component.h"
 #include "RectTransform.h"
+#include "dllclasses.h"
 
 
 /**
 * \brief Component that generate animation by changing texture in a spritesheet.
 */
-class AnimationComponent : public Component
+class DECLSPEC AnimationComponent : public Component
 {
 public:
 	sf::IntRect uvRect;

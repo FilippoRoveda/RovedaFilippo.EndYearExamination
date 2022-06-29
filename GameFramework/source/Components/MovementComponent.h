@@ -5,12 +5,13 @@
 #include "..\Components\Controller.h"
 #include "..\Components\Collider.h"
 #include "..\Components\Renderer2D.h"
+#include "dllclasses.h"
 
 /**
  * \brief Component to move object with a RectTransform component inside the world scene
  */
 
-class MovementComponent : public Component
+class DECLSPEC MovementComponent : public Component
 {
 public:
 	float speed;

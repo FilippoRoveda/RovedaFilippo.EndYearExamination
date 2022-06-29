@@ -2,6 +2,7 @@
 #include "Component.h"
 #include "SFML/Graphics.hpp"
 #include "Classes/Character.h"
+#include "dllclasses.h"
 
 class Application;
 
@@ -9,7 +10,7 @@ class Application;
 * \brief CameraComponent, create, set, and handle the cameraView, if attached to a movable Character it's position can
 * be updated in time.
 */
-class CameraComponent : public Component
+class DECLSPEC CameraComponent : public Component
 {
 	friend class Application;
 

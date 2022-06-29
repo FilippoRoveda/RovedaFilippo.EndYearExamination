@@ -1,11 +1,12 @@
 #pragma once
 #include "GameObject.h"
 #include "..\Components\RectTransform.h"
+#include "dllclasses.h"
 
 /**
 * \brief GameObject that contain by default a RectTranform component.
 */
-class Area2D : public GameObject
+class DECLSPEC Area2D : public GameObject
 {
 public:
 	RectTranform* rectTransform;

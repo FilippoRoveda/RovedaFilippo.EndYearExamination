@@ -3,13 +3,14 @@
 #include "AIAlgorithm/SeekSteering.h"
 #include "..\Application.h"
 #include "..\Classes\Character.h"
+#include "dllclasses.h"
 
 
 /**
  * \brief Component that move Agent object with a RectTransform component inside the world scene
  * \following directories given by a MovementAlgorithm.
  */
-class AIMovement : public Component
+class DECLSPEC AIMovement : public Component
 {
 	friend class Application;
 

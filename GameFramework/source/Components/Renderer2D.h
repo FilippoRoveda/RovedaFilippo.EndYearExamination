@@ -2,13 +2,14 @@
 
 #include "..\Components\Component.h"
 #include "SFML/Graphics.hpp"
+#include "dllclasses.h"
 
 
 /**
  * \brief Component that allows to render texture in a area space in viewport.
  */
 
-class Renderer2D : public Component
+class DECLSPEC Renderer2D : public Component
 {
 	friend class Application;
 

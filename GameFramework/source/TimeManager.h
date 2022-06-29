@@ -1,10 +1,11 @@
 #pragma once
 #include "SFML/System.hpp"
+#include "dllclasses.h"
 
 /**
  * \brief Utilitie struct to handle time.
  */
-struct TimeManager
+struct DECLSPEC TimeManager
 {
 public:
 	TimeManager();

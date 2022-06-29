@@ -1,6 +1,7 @@
 #pragma once
 #include "..\Components\Component.h"
 #include "..\include\SFML\Graphics.hpp"
+#include "dllclasses.h"
 
 class MovementComponent;
 
@@ -8,7 +9,7 @@ class MovementComponent;
 /**
 * \brief Component that manage device inputs.
 */
-class Controller : public Component
+class DECLSPEC Controller : public Component
 {
 	friend class Application;
 	friend class MovementComponent;

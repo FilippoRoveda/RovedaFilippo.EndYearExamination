@@ -2,6 +2,7 @@
 #include "Sprite.h"
 #include "..\Components\Controller.h"
 #include "..\Components\MovementComponent.h"
+#include "dllclasses.h"
 
 
 /**
@@ -9,7 +10,7 @@
 * a MovementComponent to handle those inputs and move the RectTranform that already own and 
 * a collider to detect scene collision.
 */
-class Character : public Sprite
+class DECLSPEC Character : public Sprite
 {
 	friend class Application;
 

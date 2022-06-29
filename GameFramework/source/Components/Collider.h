@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include "RectTransform.h"
+#include "dllclasses.h"
 
 
 
@@ -8,7 +9,7 @@
 * \brief Collider component that detect and handle collision between another collider component.
 * Can be attached to every rect transform.
 */
-class Collider : public Component
+class DECLSPEC Collider : public Component
 {
 private:
 	RectTranform* body;

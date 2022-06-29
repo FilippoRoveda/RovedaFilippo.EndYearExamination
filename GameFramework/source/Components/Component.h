@@ -1,6 +1,7 @@
 #pragma once
 #include "..\Classes\Object.h"
 #include "..\Classes\Itickable.h"
+#include "dllclasses.h"
 
 
 class GameObject;
@@ -9,7 +10,7 @@ class GameObject;
 /**
  * \brief Base Component class.
  */
-class Component : public Object, public ITickable
+class DECLSPEC Component : public Object, public ITickable
 {
 	friend class GameObject;
 

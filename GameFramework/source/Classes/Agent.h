@@ -1,12 +1,13 @@
 #include "Sprite.h"
 #include "..\Components\AIMovement.h"
 #include "..\Application.h"
+#include "dllclasses.h"
 
 /**
 * \brief Sprite gameobject that contain by default an AiMovement component to perform certain
 *        movement algorythm to follow a target gameobject.
 */
-class Agent : public Sprite
+class DECLSPEC Agent : public Sprite
 {
 	friend class Application;
 

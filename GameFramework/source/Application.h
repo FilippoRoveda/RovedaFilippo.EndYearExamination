@@ -3,12 +3,13 @@
 #include "TimeManager.h"
 #include"Classes/GameObject.h"
 #include"Components/CameraComponent.h"
+#include "dllclasses.h"
 
 
 /**
  * \brief Application class, contain every entity in scene, handle windows and views and runs the core application loop.
  */
-class Application
+class DECLSPEC Application
 {
 	friend class CameraComponent;
 

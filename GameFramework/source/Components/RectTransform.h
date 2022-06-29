@@ -2,11 +2,12 @@
 
 #include "..\Components\Component.h"
 #include "..\include\SFML\Graphics.hpp"
+#include "dllclasses.h"
 /**
  * \brief Component that allows to represent portion of space in viewport.
  */
 
-class RectTranform : public Component
+class DECLSPEC RectTranform : public Component
 {
 	friend class Application;
 

@@ -1,13 +1,14 @@
 #pragma once
 #include "GameObject.h"
 #include "SFML/Audio.hpp"
+#include "dllclasses.h"
 
 
 /**
 * \brief CLASS NOT IMPLEMENTED IN THIS FRAMEWORK VERSION.
 *  Will generate a stand alone object that contain a playable music track.
 */
-class MusicObject : public GameObject
+class DECLSPEC MusicObject : public GameObject
 {
 	friend class Application;
 private:

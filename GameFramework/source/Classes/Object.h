@@ -1,11 +1,12 @@
 #pragma once
 #include <string>
+#include "dllclasses.h"
 
 
 /**
 * \brief Base Object class that contains all base feature of the framework entities.
 */
-class Object {
+class DECLSPEC Object {
 
 protected:
 	//Activity state if the object.

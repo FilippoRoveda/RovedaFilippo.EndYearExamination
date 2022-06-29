@@ -1,9 +1,10 @@
 #pragma once
+#include "dllclasses.h"
 
 /**
 * \brief ITickable generate an inteface for all the tickable GameObjects.
 */
-class ITickable {
+class DECLSPEC ITickable {
 private:
 	//True if this GameObject can be updated.
 	bool tickable = true;

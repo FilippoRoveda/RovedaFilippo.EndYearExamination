@@ -2,13 +2,14 @@
 #include "..\RectTransform.h"
 #include <..\source\Classes\Character.h>
 #include "..\source\DataStruct.h"
+#include "dllclasses.h"
 
 
 /**
 * \brief SeekSteering Kinematic algorythm, implement a radial detection that stops tha handled RectTransform from moving
 * \ once target is reached.
 */
-class SeekSteeringAlgorythm {
+class DECLSPEC SeekSteeringAlgorythm {
 
 
 protected:

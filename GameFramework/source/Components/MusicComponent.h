@@ -2,12 +2,13 @@
 #include "Component.h"
 #include "SFML/Audio.hpp"
 #include <iostream>
+#include "dllclasses.h"
 
 
 /**
  * \brief Component that set and handle music track attached to a GameObject.
  */
-class MusicComponent : public Component
+class DECLSPEC MusicComponent : public Component
 {
 	friend class Application;
 private:

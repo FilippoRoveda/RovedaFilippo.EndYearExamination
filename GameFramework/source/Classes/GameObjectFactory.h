@@ -6,6 +6,7 @@
 #include "Sprite.h"
 #include "Components/AnimationComponent.h"
 #include "Classes/Agent.h"
+#include "dllclasses.h"
 
 class GameObject;
 
@@ -13,7 +14,7 @@ class GameObject;
 * \brief Abstract ObjectFactory that contains some base method for creation of default like
 * entity in a 2D platform level.
 */
-class GameObjectsFactory
+class DECLSPEC GameObjectsFactory
 {
 protected:
 	//Pointer to store created object

@@ -1,8 +1,9 @@
 #pragma once
+#include "dllclasses.h"
 /**
  * \brief Static data struct for statics GameObjects.
  */
-struct StaticData {
+struct DECLSPEC StaticData {
 	sf::Vector2f position = { 0, 0 };
 	float orientation = 0;
 };
@@ -10,7 +11,7 @@ struct StaticData {
 /**
  * \brief Steering data struct for kinematic GameObjects that contain linear and angular veocity.
  */
-struct SteeringData {
+struct DECLSPEC SteeringData {
 	inline SteeringData(bool hasReached)
 	{
 		this->reached = hasReached;
