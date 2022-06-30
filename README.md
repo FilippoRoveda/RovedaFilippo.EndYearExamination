@@ -5,9 +5,9 @@
 You can find this repository at: [GitHub Pages](https://pages.github.com/).
 
 
-Author : Filippo Roveda - filippo.roveda97@gmail.com.
+Author : Filippo Roveda - filippo.roveda97@gmail.com
 
-                    ![This is an image](https://freesvg.org/img/Roman-Soldier.png)
+![This is an image](https://freesvg.org/img/Roman-Soldier.png)
 
 ### Get started using this repositories:
 This is a simple gameframowk that give you possibilities to make a variety of 2D game prorotype.
@@ -78,4 +78,4 @@ Now you can navigate trought all the classes, members and method, struct, algory
 
 I also want to thank my fellow students for sharing knowledge and effort with me during these long nights of programming.
     
-                     ![This is an image](http://clipart-library.com/images/8czrM67Mi.jpg)
+![This is an image](http://clipart-library.com/images/8czrM67Mi.jpg)
