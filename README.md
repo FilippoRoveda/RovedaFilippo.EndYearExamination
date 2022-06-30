@@ -5,9 +5,9 @@
 You can find this repository at: [GitHub Pages](https://pages.github.com/).
 
 
-Author: Filippo Roveda - filippo.roveda97@gmail.com.
+Author : Filippo Roveda - filippo.roveda97@gmail.com.
 
-![This is an image](https://freesvg.org/img/Roman-Soldier.png)
+                    ![This is an image](https://freesvg.org/img/Roman-Soldier.png)
 
 ### Get started using this repositories:
 This is a simple gameframowk that give you possibilities to make a variety of 2D game prorotype.
@@ -40,7 +40,7 @@ Now you have generated the solution and 2 sub-project:
     -Sandbox, a console application to generate and test a preset level based on the current version of the Framework.
     Build him and in his corresponder Binaries folder you will find "Sandbox.exe" to play the prototype scene.
 
-## Step 2: know the resources
+## Step 2: Know the resources
 In addition to the prevoius folder you can clearly see 2 of them with the names in capslock:
 -FRAMEWORK
 -SFML
@@ -74,8 +74,8 @@ If you need a deeper view in the software structure you need to create some DOXY
 
 Now you can navigate trought all the classes, members and method, struct, algorythm and utilities.
 
-# Thanks:
+## Thanks:
 
 I also want to thank my fellow students for sharing knowledge and effort with me during these long nights of programming.
     
-![This is an image](http://clipart-library.com/images/8czrM67Mi.jpg)
+                     ![This is an image](http://clipart-library.com/images/8czrM67Mi.jpg)
